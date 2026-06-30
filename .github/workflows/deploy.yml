@@ -29,7 +29,19 @@ jobs:
             --exclude='.git' \
             -C . .
 
-      - name: Upload tarball to server
+      - name: Test SSH connectivity
+        id: test_ssh
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          debug: true
+          script: |
+            echo "SSH connected OK"
+            echo "HOSTNAME=$(hostname)"
+
+      - name: Upload tarball
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SSH_HOST }}
