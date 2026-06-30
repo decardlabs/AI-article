@@ -20,23 +20,29 @@ jobs:
       - name: Build Next.js
         run: npm run build
 
-      - name: Setup SSH
-        run: |
-          mkdir -p ~/.ssh
-          eval $(ssh-agent -s)
-          # tr -d '\r' 确保去掉可能的 Windows 换行符
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' | ssh-add -
-          ssh-keyscan -H kb.ccbot.chat >> ~/.ssh/known_hosts
-
-      - name: Deploy to server
-        run: |
-          rsync -avz --delete \
-            --exclude='node_modules' \
-            --exclude='.next/cache' \
-            --exclude='.next/trace' \
-            --exclude='.git' \
-            ./ root@kb.ccbot.chat:/www/wwwroot/kb.ccbot.chat/
+      - name: Upload to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "./"
+          target: "/www/wwwroot/kb.ccbot.chat/"
+          strip_components: 0
+          overwrite: true
+          rm: true
+          tar_tmp: "/tmp"
+          tar_exec: "tar"
+          tar_dereference: true
+          exclude: "node_modules,.next/cache,.next/trace,.git"
 
       - name: Restart PM2
-        run: |
-          ssh root@kb.ccbot.chat 'pm2 restart ai-knowledge --update-env'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /www/wwwroot/kb.ccbot.chat
+            npm ci --production
+            pm2 restart ai-knowledge --update-env
