@@ -23,8 +23,9 @@ jobs:
       - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
+          eval $(ssh-agent -s)
+          # tr -d '\r' 确保去掉可能的 Windows 换行符
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' | ssh-add -
           ssh-keyscan -H kb.ccbot.chat >> ~/.ssh/known_hosts
 
       - name: Deploy to server
