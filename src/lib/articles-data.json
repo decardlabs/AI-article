@@ -1706,5 +1706,23 @@
     ],
     "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
+  },
+  {
+    "slug": "2026-06-12 - Hermes Skill 官方排行榜2026.06（114个Skill的真实排名）",
+    "title": "Hermes Skill 官方排行榜2026.06（114个Skill的真实排名）",
+    "date": "2026-06-12",
+    "summary": "本文基于 Hermes 仓库 114 个 Skill 过去 90 天的 commit 数据，按真实开发活跃度排出 Top 12。核心发现：创意类工具（漫画生成、论文写作、ComfyUI、网页设计、配图、数学动画、信息图）霸榜前 7，说明在 AI Agent 生态中，\"让 AI 创造东西\"的需求远强于\"让 AI 管理东西\"。",
+    "content": "# Hermes Skill 官方排行榜2026.06（114个Skill的真实排名）\n\n> 原文链接：https://mp.weixin.qq.com/s/LDdj3BvbZUJIiShibQuHlg\n\n## 摘要\n\n本文基于 Hermes 仓库 114 个 Skill 过去 90 天的 commit 数据，按真实开发活跃度排出 Top 12。核心发现：创意类工具（漫画生成、论文写作、ComfyUI、网页设计、配图、数学动画、信息图）霸榜前 7，说明在 AI Agent 生态中，\"让 AI 创造东西\"的需求远强于\"让 AI 管理东西\"。\n\n## 主要内容\n\n### 1. Top 12 排行榜（按 90 天 commit 数）\n\n| 排名 | Skill | Commit | 文件数 | 类型 | 说明 |\n|------|-------|--------|--------|------|------|\n| 1 | baoyu-comic | 65 | 39 | 创意 | 文本→漫画分镜，自动角色/场景/对话气泡 |\n| 2 | research-paper-writing | 62 | 55 | 学术 | 论文完整工作流：选题→投稿 |\n| 3 | comfyui | 59 | 33 | 创意 | 在 Hermes 中直接调用 ComfyUI 工作流 |\n| 4 | popular-web-designs | 58 | 55 | 创意 | 给定 URL/截图→复刻网页 HTML/CSS/JS |\n| 5 | baoyu-article-illustrator | 50 | 37 | 创意 | 公众号文章配图/小红书封面自动化 |\n| 6 | manim-video | 50 | 17 | 创意 | 3Blue1Brown 风格数学动画 |\n| 7 | baoyu-infographic | 49 | 47 | 创意 | 数据/概念→可视化信息图 |\n| 8 | google-workspace | 46 | 5 | 办公 | Gmail/Drive/Calendar/Meet 全家桶集成 |\n| 9 | ascii-video | 32 | 12 | 工具 | 终端 ASCII 字符动画视频 |\n| 10 | hermes-agent | 31 | 3 | 元Skill | 教 Agent 如何使用 Hermes |\n| 11 | touchdesigner-mcp | 26 | 23 | 创意 | 实时视觉编程 MCP 集成 |\n| 12 | mlops/training | 25 | 14 | MLOps | 训练管线自动化 |\n\n### 2. 榜单背后的三种迭代节奏\n\n**已毕业（6个）**：某一周集中爆发大量 commit，后续沉寂\n- baoyu-comic、research-paper-writing、popular-web-designs、baoyu-infographic、manim-video、ascii-video\n\n**刚入学（4个）**：后半段突然发力，当前真正在迭代\n- comfyui、baoyu-article-illustrator、touchdesigner-mcp、hermes-agent\n\n**日常打卡（2个）**：无爆发但持续小幅迭代\n- google-workspace（13 周中 12 周有 commit）、mlops/training（8 周有 commit）\n\n> 判断一个 Skill 值不值得学：别看 90 天累计，看后半段——后半段还在动的才是真活着的。\n\n### 3. 关于降级的关键发现\n\nv0.16.0 将 9 个 Skill 从 bundled 降级为 optional：\n- baoyu-comic（Top 1）和 baoyu-article-illustrator（Top 5）都在列\n- dspy、subagent-driven-development 等 commit 数极低的也在列\n- **结论**：降级标准只看了默认安装体积维度，没有区分\"没人用所以降级\"和\"有人用但不需要默认装\"\n\n### 4. 生态数据观察\n\n| 分类 | Skill 数量 | 活跃度 |\n|------|-----------|--------|\n| Creative 创意 | 28 | 最高，头部最强 |\n| MLOps 机器学习 | 18 | 中位数不到 3 commit，渗透率低 |\n| Productivity 办公 | 15 | 中等 |\n| Autonomous AI Agents 智能体 | 12 | 中等 |\n\nMLOps 偏冷的原因：用户更习惯 PyTorch / Hugging Face 原生工具，且 Hermes 的 MLOps Skill 竞争多。\n\n### 5. 核心结论\n\n> 人类对于「让 AI 帮我创造东西」的渴望，远比「让 AI 帮我管理东西」来得猛烈。\n\n114 个 Skill 中，最活跃的是画漫画的、做动画的、配图的、生成信息图的——不是写代码的、不是管项目的、不是跑训练的。数据不会骗人，AI Agent 生态正在经历明确拐点。",
+    "source": "https://mp.weixin.qq.com/s/LDdj3BvbZUJIiShibQuHlg",
+    "tags": [
+      "daily-save",
+      "web-clip",
+      "AI",
+      "Hermes",
+      "Agent",
+      "Skill"
+    ],
+    "category": "宏观 / 商业",
+    "categorySlug": "business"
   }
 ]
