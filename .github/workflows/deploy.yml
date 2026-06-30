@@ -20,29 +20,42 @@ jobs:
       - name: Build Next.js
         run: npm run build
 
-      - name: Upload to server
+      - name: Package (exclude large caches)
+        run: |
+          tar czf /tmp/deploy.tar.gz \
+            --exclude='node_modules' \
+            --exclude='.next/cache' \
+            --exclude='.next/trace' \
+            --exclude='.git' \
+            -C . .
+
+      - name: Upload tarball to server
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "./"
-          target: "/www/wwwroot/kb.ccbot.chat/"
+          source: "/tmp/deploy.tar.gz"
+          target: "/tmp"
           strip_components: 0
           overwrite: true
           rm: true
-          tar_tmp: "/tmp"
-          tar_exec: "tar"
-          tar_dereference: true
-          exclude: "node_modules,.next/cache,.next/trace,.git"
 
-      - name: Restart PM2
+      - name: Deploy on server
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /www/wwwroot/kb.ccbot.chat
+            set -euo pipefail
+            TARGET="/www/wwwroot/kb.ccbot.chat"
+            echo "Extracting..."
+            tar xzf /tmp/deploy.tar.gz -C "$TARGET" --overwrite
+            rm -f /tmp/deploy.tar.gz
+            echo "Installing production deps..."
+            cd "$TARGET"
             npm ci --production
+            echo "Restarting PM2..."
             pm2 restart ai-knowledge --update-env
+            echo "Done."
