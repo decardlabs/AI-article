@@ -38,8 +38,8 @@ jobs:
           # Write and convert SSH key to PEM format (avoids libcrypto issue)
           mkdir -p ~/.ssh
           echo "$SSH_KEY" > ~/.ssh/id_rsa
-          ssh-keygen -p -m PEM -f ~/.ssh/id_rsa -N "" -q
           chmod 600 ~/.ssh/id_rsa
+          ssh-keygen -p -m PEM -f ~/.ssh/id_rsa -N "" -q
           ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
 
           # Upload via rsync
