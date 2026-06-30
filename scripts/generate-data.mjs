@@ -85,6 +85,18 @@ const KEYWORD_CATEGORY_MAP = [
     '阿里产品经理', 'ai 创造'], 'business'],
 ]
 
+// slug → 显示名称 映射
+const SLUG_TO_NAME = {
+  'ai-engineering': '编程工程方法论',
+  'ai-design': '设计体系',
+  'rag-knowledge': 'RAG / 知识库',
+  'edge-ai': '端侧 AI / 嵌入式',
+  'models': '模型 / 技术前沿',
+  'open-source': '开源工具',
+  'business': '宏观 / 商业',
+  'uncategorized': '其他未分类',
+}
+
 function classifyArticle(title, tags, content) {
   const text = `${title} ${(tags || []).join(' ')} ${(content || '').slice(0, 500)}`.toLowerCase()
   for (const [keywords, category] of KEYWORD_CATEGORY_MAP) {
@@ -144,7 +156,7 @@ for (const file of files) {
     content,
     source: data.source || '',
     tags,
-    category,
+    category: SLUG_TO_NAME[category] || category,
     categorySlug: category,
   })
 }

@@ -14,7 +14,7 @@
       "工作流",
       "提效"
     ],
-    "category": "business",
+    "category": "宏观 / 商业",
     "categorySlug": "business"
   },
   {
@@ -32,7 +32,7 @@
       "Google",
       "内容生成"
     ],
-    "category": "ai-design",
+    "category": "设计体系",
     "categorySlug": "ai-design"
   },
   {
@@ -50,7 +50,7 @@
       "视频制作",
       "私有化部署"
     ],
-    "category": "edge-ai",
+    "category": "端侧 AI / 嵌入式",
     "categorySlug": "edge-ai"
   },
   {
@@ -68,7 +68,7 @@
       "设计",
       "AI"
     ],
-    "category": "ai-design",
+    "category": "设计体系",
     "categorySlug": "ai-design"
   },
   {
@@ -86,7 +86,7 @@
       "智能座舱",
       "语音交互"
     ],
-    "category": "edge-ai",
+    "category": "端侧 AI / 嵌入式",
     "categorySlug": "edge-ai"
   },
   {
@@ -104,7 +104,7 @@
       "GitHub开源",
       "工具推荐"
     ],
-    "category": "open-source",
+    "category": "开源工具",
     "categorySlug": "open-source"
   },
   {
@@ -122,7 +122,7 @@
       "开源",
       "RedFox"
     ],
-    "category": "open-source",
+    "category": "开源工具",
     "categorySlug": "open-source"
   },
   {
@@ -136,7 +136,7 @@
       "daily-save",
       "web-clip"
     ],
-    "category": "rag-knowledge",
+    "category": "RAG / 知识库",
     "categorySlug": "rag-knowledge"
   },
   {
@@ -152,7 +152,7 @@
       "TTS",
       "开源项目"
     ],
-    "category": "edge-ai",
+    "category": "端侧 AI / 嵌入式",
     "categorySlug": "edge-ai"
   },
   {
@@ -170,7 +170,7 @@
       "社交AI",
       "创业"
     ],
-    "category": "models",
+    "category": "模型 / 技术前沿",
     "categorySlug": "models"
   },
   {
@@ -187,7 +187,7 @@
       "MS",
       "端侧AI"
     ],
-    "category": "edge-ai",
+    "category": "端侧 AI / 嵌入式",
     "categorySlug": "edge-ai"
   },
   {
@@ -206,7 +206,7 @@
       "HTTPS",
       "独立开发"
     ],
-    "category": "business",
+    "category": "宏观 / 商业",
     "categorySlug": "business"
   },
   {
@@ -220,7 +220,7 @@
       "daily-save",
       "web-clip"
     ],
-    "category": "edge-ai",
+    "category": "端侧 AI / 嵌入式",
     "categorySlug": "edge-ai"
   },
   {
@@ -239,7 +239,7 @@
       "智能硬件",
       "DIY"
     ],
-    "category": "edge-ai",
+    "category": "端侧 AI / 嵌入式",
     "categorySlug": "edge-ai"
   },
   {
@@ -256,7 +256,7 @@
       "tts",
       "windows"
     ],
-    "category": "open-source",
+    "category": "开源工具",
     "categorySlug": "open-source"
   },
   {
@@ -274,7 +274,7 @@
       "agent-design",
       "product-design"
     ],
-    "category": "business",
+    "category": "宏观 / 商业",
     "categorySlug": "business"
   },
   {
@@ -293,7 +293,7 @@
       "LoopEngineering",
       "VibeCoding"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -310,7 +310,7 @@
       "设计",
       "skill"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -329,7 +329,7 @@
       "有道",
       "AI-Agent"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -346,7 +346,7 @@
       "设计",
       "开发工具"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -360,7 +360,7 @@
       "daily-save",
       "web-clip"
     ],
-    "category": "business",
+    "category": "宏观 / 商业",
     "categorySlug": "business"
   },
   {
@@ -374,7 +374,7 @@
       "daily-save",
       "web-clip"
     ],
-    "category": "rag-knowledge",
+    "category": "RAG / 知识库",
     "categorySlug": "rag-knowledge"
   },
   {
@@ -388,7 +388,7 @@
       "daily-save",
       "web-clip"
     ],
-    "category": "open-source",
+    "category": "开源工具",
     "categorySlug": "open-source"
   },
   {
@@ -406,7 +406,7 @@
       "Skill",
       "前端"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -422,7 +422,7 @@
       "AI工具",
       "视频制作"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -440,7 +440,7 @@
       "Claude-Code",
       "Skill"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -454,7 +454,7 @@
       "daily-save",
       "web-clip"
     ],
-    "category": "open-source",
+    "category": "开源工具",
     "categorySlug": "open-source"
   },
   {
@@ -472,7 +472,7 @@
       "量化工具",
       "开源"
     ],
-    "category": "models",
+    "category": "模型 / 技术前沿",
     "categorySlug": "models"
   },
   {
@@ -488,7 +488,7 @@
       "AI-design",
       "open-source"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -502,7 +502,7 @@
       "daily-save",
       "web-clip"
     ],
-    "category": "open-source",
+    "category": "开源工具",
     "categorySlug": "open-source"
   },
   {
@@ -520,7 +520,7 @@
       "fusion",
       "开源"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -537,7 +537,7 @@
       "Zephyr",
       "RTOS"
     ],
-    "category": "edge-ai",
+    "category": "端侧 AI / 嵌入式",
     "categorySlug": "edge-ai"
   },
   {
@@ -556,7 +556,7 @@
       "Obsidian",
       "个人知识管理"
     ],
-    "category": "rag-knowledge",
+    "category": "RAG / 知识库",
     "categorySlug": "rag-knowledge"
   },
   {
@@ -573,7 +573,7 @@
       "公众号",
       "Skill"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -587,7 +587,7 @@
       "daily-save",
       "web-clip"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -604,7 +604,7 @@
       "ai",
       "open-source"
     ],
-    "category": "models",
+    "category": "模型 / 技术前沿",
     "categorySlug": "models"
   },
   {
@@ -622,7 +622,7 @@
       "MCP",
       "Trae"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -639,7 +639,7 @@
       "开源模型",
       "图像生成"
     ],
-    "category": "models",
+    "category": "模型 / 技术前沿",
     "categorySlug": "models"
   },
   {
@@ -657,7 +657,7 @@
       "软件工程",
       "方法论"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -674,7 +674,7 @@
       "Claude-Code",
       "automation"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -693,7 +693,7 @@
       "DeepSeek",
       "Qdrant"
     ],
-    "category": "rag-knowledge",
+    "category": "RAG / 知识库",
     "categorySlug": "rag-knowledge"
   },
   {
@@ -707,7 +707,7 @@
       "daily-save",
       "web-clip"
     ],
-    "category": "models",
+    "category": "模型 / 技术前沿",
     "categorySlug": "models"
   },
   {
@@ -721,7 +721,7 @@
       "daily-save",
       "web-clip"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -739,7 +739,7 @@
       "PixiJS",
       "HTML"
     ],
-    "category": "models",
+    "category": "模型 / 技术前沿",
     "categorySlug": "models"
   },
   {
@@ -758,7 +758,7 @@
       "开源",
       "ComfyUI"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -777,7 +777,7 @@
       "Pixelle-Video",
       "阿里"
     ],
-    "category": "open-source",
+    "category": "开源工具",
     "categorySlug": "open-source"
   },
   {
@@ -795,7 +795,7 @@
       "Penpot",
       "Figma"
     ],
-    "category": "ai-design",
+    "category": "设计体系",
     "categorySlug": "ai-design"
   },
   {
@@ -814,7 +814,7 @@
       "开源工具",
       "AI"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -830,7 +830,7 @@
       "obsidian",
       "知识管理"
     ],
-    "category": "rag-knowledge",
+    "category": "RAG / 知识库",
     "categorySlug": "rag-knowledge"
   },
   {
@@ -844,7 +844,7 @@
       "daily-save",
       "web-clip"
     ],
-    "category": "rag-knowledge",
+    "category": "RAG / 知识库",
     "categorySlug": "rag-knowledge"
   },
   {
@@ -862,7 +862,7 @@
       "无头浏览器",
       "AI-Agent"
     ],
-    "category": "uncategorized",
+    "category": "其他未分类",
     "categorySlug": "uncategorized"
   },
   {
@@ -880,7 +880,7 @@
       "端侧AI",
       "语音交互"
     ],
-    "category": "edge-ai",
+    "category": "端侧 AI / 嵌入式",
     "categorySlug": "edge-ai"
   },
   {
@@ -898,7 +898,7 @@
       "Apple-Home",
       "米家"
     ],
-    "category": "edge-ai",
+    "category": "端侧 AI / 嵌入式",
     "categorySlug": "edge-ai"
   },
   {
@@ -912,7 +912,7 @@
       "daily-save",
       "web-clip"
     ],
-    "category": "rag-knowledge",
+    "category": "RAG / 知识库",
     "categorySlug": "rag-knowledge"
   },
   {
@@ -929,7 +929,7 @@
       "Design-Agent",
       "AI工具"
     ],
-    "category": "ai-design",
+    "category": "设计体系",
     "categorySlug": "ai-design"
   },
   {
@@ -943,7 +943,7 @@
       "daily-save",
       "web-clip"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -960,7 +960,7 @@
       "claude-code",
       "prompt-engineering"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -977,7 +977,7 @@
       "typography",
       "open-source"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -994,7 +994,7 @@
       "CAD",
       "3D打印"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1008,7 +1008,7 @@
       "daily-save",
       "web-clip"
     ],
-    "category": "ai-design",
+    "category": "设计体系",
     "categorySlug": "ai-design"
   },
   {
@@ -1026,7 +1026,7 @@
       "Gemini",
       "具身智能"
     ],
-    "category": "edge-ai",
+    "category": "端侧 AI / 嵌入式",
     "categorySlug": "edge-ai"
   },
   {
@@ -1044,7 +1044,7 @@
       "工程化",
       "部署"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1062,7 +1062,7 @@
       "agent",
       "open-source"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1079,7 +1079,7 @@
       "嵌入式",
       "工具"
     ],
-    "category": "edge-ai",
+    "category": "端侧 AI / 嵌入式",
     "categorySlug": "edge-ai"
   },
   {
@@ -1097,7 +1097,7 @@
       "IoT",
       "MQTT"
     ],
-    "category": "edge-ai",
+    "category": "端侧 AI / 嵌入式",
     "categorySlug": "edge-ai"
   },
   {
@@ -1114,7 +1114,7 @@
       "TinyML",
       "ESP32"
     ],
-    "category": "edge-ai",
+    "category": "端侧 AI / 嵌入式",
     "categorySlug": "edge-ai"
   },
   {
@@ -1132,7 +1132,7 @@
       "人脸检测",
       "摄像头"
     ],
-    "category": "rag-knowledge",
+    "category": "RAG / 知识库",
     "categorySlug": "rag-knowledge"
   },
   {
@@ -1146,7 +1146,7 @@
       "daily-save",
       "web-clip"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1165,7 +1165,7 @@
       "量化",
       "Unsloth"
     ],
-    "category": "models",
+    "category": "模型 / 技术前沿",
     "categorySlug": "models"
   },
   {
@@ -1183,7 +1183,7 @@
       "DeerFlow",
       "Agent"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1199,7 +1199,7 @@
       "ai-coding",
       "tool"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1216,7 +1216,7 @@
       "Claude Code",
       "开源"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1234,7 +1234,7 @@
       "MCP",
       "CAD"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1251,7 +1251,7 @@
       "claude-code",
       "best-practices"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1267,7 +1267,7 @@
       "Claude Code",
       "效率"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1284,7 +1284,7 @@
       "PM",
       "工作流"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1303,7 +1303,7 @@
       "Superpowers",
       "Claude-Code"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1320,7 +1320,7 @@
       "浏览器自动化",
       "开源项目"
     ],
-    "category": "open-source",
+    "category": "开源工具",
     "categorySlug": "open-source"
   },
   {
@@ -1337,7 +1337,7 @@
       "open-source",
       "customer-service"
     ],
-    "category": "open-source",
+    "category": "开源工具",
     "categorySlug": "open-source"
   },
   {
@@ -1354,7 +1354,7 @@
       "agent",
       "industry"
     ],
-    "category": "business",
+    "category": "宏观 / 商业",
     "categorySlug": "business"
   },
   {
@@ -1371,7 +1371,7 @@
       "Anthropic",
       "创始人"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1388,7 +1388,7 @@
       "startup",
       "entrepreneurship"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1405,7 +1405,7 @@
       "open-source",
       "自媒体"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1422,7 +1422,7 @@
       "RWKV",
       "芯片"
     ],
-    "category": "edge-ai",
+    "category": "端侧 AI / 嵌入式",
     "categorySlug": "edge-ai"
   },
   {
@@ -1439,7 +1439,7 @@
       "领导力",
       "企业文化"
     ],
-    "category": "business",
+    "category": "宏观 / 商业",
     "categorySlug": "business"
   },
   {
@@ -1458,7 +1458,7 @@
       "社会实验",
       "Emergence-World"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1472,7 +1472,7 @@
       "daily-save",
       "web-clip"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1491,7 +1491,7 @@
       "Agent",
       "Skill"
     ],
-    "category": "business",
+    "category": "宏观 / 商业",
     "categorySlug": "business"
   },
   {
@@ -1507,7 +1507,7 @@
       "嵌入式",
       "AI"
     ],
-    "category": "rag-knowledge",
+    "category": "RAG / 知识库",
     "categorySlug": "rag-knowledge"
   },
   {
@@ -1521,7 +1521,7 @@
       "daily-save",
       "web-clip"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1537,7 +1537,7 @@
       "AI-Agent",
       "企业落地"
     ],
-    "category": "rag-knowledge",
+    "category": "RAG / 知识库",
     "categorySlug": "rag-knowledge"
   },
   {
@@ -1555,7 +1555,7 @@
       "framework-comparison",
       "engineering"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1572,7 +1572,7 @@
       "ai-coding",
       "frontend"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1586,7 +1586,7 @@
       "daily-save",
       "web-clip"
     ],
-    "category": "open-source",
+    "category": "开源工具",
     "categorySlug": "open-source"
   },
   {
@@ -1604,7 +1604,7 @@
       "副业",
       "独立开发"
     ],
-    "category": "business",
+    "category": "宏观 / 商业",
     "categorySlug": "business"
   },
   {
@@ -1622,7 +1622,7 @@
       "Claude-Code",
       "工程实践"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1639,7 +1639,7 @@
       "VibeCoding",
       "AI创作"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   },
   {
@@ -1653,7 +1653,7 @@
       "daily-save",
       "web-clip"
     ],
-    "category": "ai-engineering",
+    "category": "编程工程方法论",
     "categorySlug": "ai-engineering"
   }
 ]

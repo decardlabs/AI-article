@@ -10,7 +10,10 @@ export async function GET(request: NextRequest) {
 
   const articles = getAllArticles()
   const ms = buildSearchIndex(articles)
-  const results = ms.search(q.trim())
+  const results = ms.search(q.trim()).map(r => ({
+    ...r,
+    slug: r.id,
+  }))
 
   return NextResponse.json({ results })
 }
