@@ -1708,6 +1708,25 @@
     "categorySlug": "ai-engineering"
   },
   {
+    "slug": "2026-06-18 - 201GB压到6GB！伯克利博士搞出LEANN",
+    "title": "201GB压到6GB！伯克利博士搞出LEANN：笔记本用少97%存储就能索引百万文档，个人AI大脑来了",
+    "date": "2026-06-18",
+    "summary": "UC Berkeley Sky Computing Lab 开源了 LEANN（Learned Efficient Approximate Nearest Neighbor），一种将向量索引存储压缩 97% 的技术——6000 万个文本块从 201GB 降至 6GB，精度不降。通过\"按需重算嵌入+图剪枝\"的核心思路，让个人笔记本第一次能跑百万级文档的本地 RAG。所有数据留在本地，不碰云。",
+    "content": "# 201GB压到6GB！伯克利博士搞出LEANN：笔记本用少97%存储就能索引百万文档，个人AI大脑来了\n\n> 原文链接：https://mp.weixin.qq.com/s/N4cB4qdbZd1GNGfh4m8jZw\n\n## 摘要\n\nUC Berkeley Sky Computing Lab 开源了 LEANN（Learned Efficient Approximate Nearest Neighbor），一种将向量索引存储压缩 97% 的技术——6000 万个文本块从 201GB 降至 6GB，精度不降。通过\"按需重算嵌入+图剪枝\"的核心思路，让个人笔记本第一次能跑百万级文档的本地 RAG。所有数据留在本地，不碰云。\n\n## 主要内容\n\n### 1. 存储之墙：RAG 的瓶颈\n\n- 6000 万个文本块，传统 HNSW 向量索引需 188-201GB\n- 个人笔记本（MacBook Pro 1TB，实际可用 <500GB）根本无法运行百万级 RAG\n- 邮件、聊天记录、浏览器历史等个人数据每天都在增长，传统向量数据库撑不住\n\n### 2. LEANN 的核心思路\n\n**传统做法**：保存每个文本块的高维嵌入向量 → 存储巨大\n\n**LEANN 做法**：不存影印副本，只画\"地铁线路图\"\n- **高阶节点保留**：被高频访问的枢纽节点保留完整连接\n- **普通节点剪枝**：只保留少数关键边\n- **两级混合搜索**：先用极小的 PQ 码本粗筛 → 再对 Top 候选精确重算嵌入\n- 构建完成后删除嵌入向量（`prune_embeddings` 函数）\n\n### 3. 实测数据\n\n| 数据集 | 原始大小 | LEANN 后 | 节省 |\n|--------|---------|----------|------|\n| 6000万 Wiki chunks | 188-201GB | 6GB | 97% |\n| 78万封邮件 | 2.4GB | 79MB | 97% |\n| 40万条聊天记录 | 1.8GB | 64MB | 97% |\n| 210万 DPR 段落 | 3.8GB | 324MB | 91% |\n| 3.8万条浏览器历史 | 130MB | 6.4MB | 95% |\n\n精度：90% 召回率下与 HNSW 基本持平，下游 RAG 问答的 Exact Match 和 F1 分数无明显差距。\n\n### 4. 搜索慢了几十倍，为什么可用？\n\n- LEANN 检索比纯 HNSW 慢 50-100 倍\n- 但在 RAG 场景中：LLM 生成回复占 20-70 秒，检索只占毫秒到秒级\n- 端到端总延迟增加通常不到 10-20%，复杂任务甚至不到 3%\n- **核心洞察**：在\"生成主导\"的 RAG 时代，检索延迟不再是第一约束\n\n> 不是高 QPS 在线服务的方案，而是个人/边缘场景的最优解。\n\n### 5. 完整工具链\n\n- 支持 PDF/TXT/Markdown、Apple Mail、Chrome 历史、微信（导出）、iMessage、ChatGPT/Claude 对话导出\n- 代码库（AST 级别函数/类切分）\n- Claude Code MCP 集成（`leann_mcp`）\n- Slack、Twitter 书签等通过 MCP 接入\n- 一行命令安装，支持 Ollama/LM Studio/vLLM，零遥测，MIT 开源\n\n### 6. 背后的团队\n\n- 创建者：Yichuan Wang（Berkeley EECS PhD，Sky Computing Lab，SJTU ACM 班）\n- 合作者包括 Ion Stoica、Matei Zaharia 等分布式系统大佬\n\n## 关键段落\n\n> 「Storage is cheap? Not on a personal laptop with 32GB RAM and 1TB SSD.」\n\n> 「500GB 的档案，LEANN 索引只要 9GB，全在本地。这才是个人 AI 该有的样子。」\n\n> 「个人 AI 第二大脑喊了很多年。卡住它的第一个硬约束，跟算力无关，跟模型也无关——是存储空间本身。LEANN 把这面墙推倒了。」",
+    "source": "https://mp.weixin.qq.com/s/N4cB4qdbZd1GNGfh4m8jZw",
+    "tags": [
+      "daily-save",
+      "web-clip",
+      "AI",
+      "RAG",
+      "LEANN",
+      "向量索引",
+      "开源"
+    ],
+    "category": "RAG / 知识库",
+    "categorySlug": "rag-knowledge"
+  },
+  {
     "slug": "2026-06-12 - Hermes Skill 官方排行榜2026.06（114个Skill的真实排名）",
     "title": "Hermes Skill 官方排行榜2026.06（114个Skill的真实排名）",
     "date": "2026-06-12",
