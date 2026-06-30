@@ -25,7 +25,7 @@ export default function ArticlePage({ params }: { params: { slug: string[] } }) 
             href={`/category/${article.categorySlug}`}
             className="inline-flex items-center gap-1 px-2 py-0.5 text-xs rounded-[4px] bg-tag-bg text-tag-text no-underline hover:bg-border"
           >
-            {category?.icon} {category?.name || '未分类'}
+            {category?.icon} {category?.name || '其他未分类'}
           </Link>
           <span className="text-xs text-text-tertiary">{article.date}</span>
         </div>

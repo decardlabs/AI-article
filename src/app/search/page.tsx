@@ -3,6 +3,7 @@
 import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
+import { CATEGORIES } from '@/lib/categories'
 
 interface SearchResult {
   slug: string
@@ -58,17 +59,8 @@ function SearchResults() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {results.map(result => {
-          // Resolve the category info from the category field name
-          const catIcon: Record<string, string> = {
-            'AI 编程工程方法论': '⚡',
-            'AI 设计体系': '🎨',
-            'RAG / 知识库': '🧠',
-            '端侧 AI / 嵌入式': '🤖',
-            '模型 / 技术前沿': '🔬',
-            '开源工具': '🛠',
-            '宏观 / 商业': '📊',
-          }
-          const icon = catIcon[result.category] || '📄'
+          // Resolve the category info from CATEGORIES
+          const cat = CATEGORIES.find(c => c.name === result.category)
 
           return (
             <Link
@@ -78,7 +70,7 @@ function SearchResults() {
             >
               <div className="mb-2">
                 <span className="inline-flex items-center gap-1 px-2 py-0.5 text-xs rounded-[4px] bg-tag-bg text-tag-text">
-                  {icon} {result.category}
+                  {cat?.icon || '📄'} {cat?.name || result.category}
                 </span>
               </div>
               <h3 className="text-lg font-medium text-text-primary line-clamp-2 mb-2 leading-7">
