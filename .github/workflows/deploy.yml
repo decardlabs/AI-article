@@ -51,7 +51,6 @@ jobs:
           target: "/tmp"
           strip_components: 0
           overwrite: true
-          rm: true
 
       - name: Deploy on server
         uses: appleboy/ssh-action@v1.0.3
