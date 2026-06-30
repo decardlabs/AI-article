@@ -1,14 +1,14 @@
 import { Category } from './types'
 
 export const CATEGORIES: Category[] = [
-  { name: 'AI 编程工程方法论', slug: 'ai-engineering', count: 0, icon: '⚡' },
-  { name: 'AI 设计体系', slug: 'ai-design', count: 0, icon: '🎨' },
+  { name: '编程工程方法论', slug: 'ai-engineering', count: 0, icon: '⚡' },
+  { name: '设计体系', slug: 'ai-design', count: 0, icon: '🎨' },
   { name: 'RAG / 知识库', slug: 'rag-knowledge', count: 0, icon: '🧠' },
   { name: '端侧 AI / 嵌入式', slug: 'edge-ai', count: 0, icon: '🤖' },
   { name: '模型 / 技术前沿', slug: 'models', count: 0, icon: '🔬' },
   { name: '开源工具', slug: 'open-source', count: 0, icon: '🛠' },
   { name: '宏观 / 商业', slug: 'business', count: 0, icon: '📊' },
-  { name: '其他', slug: 'uncategorized', count: 0, icon: '📄' },
+  { name: '其他未分类', slug: 'uncategorized', count: 0, icon: '📄' },
 ]
 
 export function getCategory(name: string): Category | undefined {
