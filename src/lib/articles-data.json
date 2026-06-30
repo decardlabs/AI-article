@@ -1321,6 +1321,24 @@
     "categorySlug": "ai-engineering"
   },
   {
+    "slug": "2026-06-30 - Claude Code 太折腾？这个国产开源 AI 编程平台打开就能用",
+    "title": "Claude Code 太折腾？这个国产开源 AI 编程平台打开就能用",
+    "date": "2026-06-30",
+    "summary": "本文介绍了国产开源 AI 编程平台 MonkeyCode——一款无需安装、免费使用、内置云端开发环境的 AI 开发平台。作者通过可视化数据分析页面、太空小游戏、HTML转PNG工具三个实际案例，测试了 MonkeyCode 的效果，展示了其在快速原型开发方面的能力。",
+    "content": "# Claude Code 太折腾？这个国产开源 AI 编程平台打开就能用\n\n> 原文链接：https://mp.weixin.qq.com/s/z8vBjKwG7A6mt5iW9YpRrQ\n\n## 摘要\n\n本文介绍了国产开源 AI 编程平台 MonkeyCode——一款无需安装、免费使用、内置云端开发环境的 AI 开发平台。作者通过可视化数据分析页面、太空小游戏、HTML转PNG工具三个实际案例，测试了 MonkeyCode 的效果，展示了其在快速原型开发方面的能力。\n\n## 主要内容\n\n### 1. MonkeyCode 是什么\n\n- 开源企业级 AI 开发平台（GitHub: chaitin/MonkeyCode，4.3k stars）\n- 内置开发环境管理、AI 模型管理、AI 任务管理、项目需求管理\n- 区别于其他 vibe coding 工具，面向专业开发团队\n- **免费使用**，每天 3000 万免费额度\n- 支持国内主流基础大模型和旗舰模型\n- 支持绑定代码仓库（GitHub / Gitee）\n\n### 2. 案例一：可视化数据分析页面\n\n- 任务：围绕\"AI 发展\"主题生成完整的 HTML 展示页面\n- 运行时间约 4 分钟\n- 云端直接运行，生成外部可访问地址\n- 配色布局清新，可直接用于公众号配图或课程资料\n\n### 3. 案例二：太空战斗机小游戏\n\n- 制作一个\"太空陨石躲避\"网页小游戏\n- **初版**：雏形具备但画面简陋（简单图形+发光元素）\n- **第一次优化**：用 SVGs 替换美术资产（飞船、陨石、能量球、星云贴图）\n- **第二次优化**：生成带 alpha 通道的高清 PNG 图片，提升视觉质感\n- **第三次优化**：增加血条、UI 图标等细节\n- **最终版**：新增敌方战斗机战斗元素\n- 全程云端运行，无需本地部署\n\n### 4. 案例三：HTML 转 PNG 图片工具\n\n- 制作纯前端工具：左侧编辑 HTML → 右侧实时预览 → 导出 PNG\n- 支持最高 4K 清晰度\n- 实用场景：公众号、小红书、朋友圈、PPT 等不接受 HTML 展示的平台\n- 实测用 HTML 制作模型科普卡片并导出为图片，效果良好\n\n### 5. 总结评价\n\n**优势：**\n- **免安装**：不用下载配置开发环境\n- **免部署**：云端直接运行，做好即用\n- **模型丰富**：支持国内主流大模型，每日 3000 万免费额度\n- 适合快速试想法：网页小工具、数据展示、小游戏 Demo\n\n**不足：**\n- 非一次性完美，需要不断提需求反复优化\n- 游戏美术、页面细节、交互体验需多次迭代\n\n> MonkeyCode 的完成度已经够日常折腾一些小项目了。",
+    "source": "https://mp.weixin.qq.com/s/z8vBjKwG7A6mt5iW9YpRrQ",
+    "tags": [
+      "daily-save",
+      "web-clip",
+      "AI",
+      "编程",
+      "开源",
+      "MonkeyCode"
+    ],
+    "category": "编程工程方法论",
+    "categorySlug": "ai-engineering"
+  },
+  {
     "slug": "2026-06-30 - Claude Code OpenSpec Superpowers协同开发实践",
     "title": "Claude Code + OpenSpec + Superpowers 协同开发实践指南",
     "date": "2026-06-30",
