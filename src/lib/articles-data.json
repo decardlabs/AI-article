@@ -156,6 +156,23 @@
     "categorySlug": "edge-ai"
   },
   {
+    "slug": "2026-06-30 - 教你让 Claude Code 在你睡觉时继续干活",
+    "title": "教你让 Claude Code 在你睡觉时继续干活！",
+    "date": "2026-06-30",
+    "summary": "本文系统解释了 Loop Engineering 的核心思想——从\"写一次 prompt 让 AI 回答\"进化到\"让 AI 围绕一个目标持续推进、自我检查、记录状态\"。通过对比 Prompt、/goal、Loop 和定时任务的区别，给出了 Claude Code 中可直接复用的 Loop Charter 模板和最佳实践。",
+    "content": "# 教你让 Claude Code 在你睡觉时继续干活！\n\n> 原文链接：https://mp.weixin.qq.com/s/AmU1VxA2_1plRH0BCRudMw\n\n## 摘要\n\n本文系统解释了 Loop Engineering 的核心思想——从\"写一次 prompt 让 AI 回答\"进化到\"让 AI 围绕一个目标持续推进、自我检查、记录状态\"。通过对比 Prompt、/goal、Loop 和定时任务的区别，给出了 Claude Code 中可直接复用的 Loop Charter 模板和最佳实践。\n\n## 主要内容\n\n### 1. Prompt 与 Loop 的根本区别\n\n- **Prompt**：一次生成，Claude 会自信地给出看似完整的答案，但可能包含虚假来源（幻觉）\n- **Loop**：可衡量的完成标准 + 自检机制。例如写 brief 时要求\"每个 claim 至少三个来源，每个链接必须打开且内容支持对应论断\"\n- 核心变化：不是让 Claude 回答一次，而是给它一个可自我检查、反复推进直到完成的工作方式\n\n### 2. 什么是 Loop\n\nLoop 是一个小系统，反复提示 Claude 直到任务完成。五个步骤：\n\n1. **找到工作** — 打开任务列表、失败的测试、未读邮件或文件夹\n2. **做这件事** — 一次处理一个任务\n3. **检查自己** — 第二轮检查确认是否真的完成\n4. **记住** — 写 LOOP-STATE.md 记录进度，避免重复或丢失\n5. **再来一轮** — 继续重复直到完成或需要暂停\n\n> Prompting is doing the work. Loop engineering is managing the worker.\n\n### 3. Loop ≠ 定时任务（Cron Job）\n\n| 维度 | Cron Job | Loop |\n|------|----------|------|\n| 执行方式 | 固定脚本，每天一样 | 内含决策者（Claude） |\n| 应对变化 | 测试坏了不会自己修 | 可判断下一步：继续/重试/撤回/停止 |\n| 关键差异 | 没有\"判断\"能力 | 在任务中间做真正判断 |\n\n### 4. Claude Code 的两个内置命令\n\n**/goal — 直到完成才停**\n- 适用于有明确终点的任务\n- 每一轮之后另一个 Claude 会悄悄检查是否达标\n- 示例：`/goal write a one page brief on [topic] where every claim has at least three sources...`\n\n**/loop — 按节奏重复执行**\n- 适用于需要持续监控的任务\n- 指定检查频率和动作\n- 示例：`/loop 30m check whether my live site is back up...`\n\n### 5. Loop Charter 模板（可直接复制）\n\n完整的 Charter 包含六个部分：\n1. **GOAL** — 明确的完成状态定义\n2. **WHERE THE WORK IS** — 工作源（文件夹/TODO/任务板）\n3. **HOW TO WORK** — 一次一件，匹配现有模式\n4. **HOW TO CHECK YOURSELF** — 运行测试/重新读取确认\n5. **HOW TO REMEMBER** — 维护 LOOP-STATE.md\n6. **WHEN TO STOP** — 完成/阻塞/达到本轮限额\n\n### 6. 何时不应该用 Loop\n\n- **一次性任务**不需要 loop，普通 prompt 更快\n- **成本更高**：self-check 和重试会多次调用 Claude\n- **模糊任务不适合**：需要可衡量的完成状态，说不清\"完成\"就没法可靠循环\n\n### 7. 实践建议\n\n找一个你一直手动重复做的任务（多步骤、可检查），把 Charter 粘进去填好，先全程看着跑一次。信任后即可放到定时任务里。第一次醒来发现某件事已经在夜里自己完成，你就不会再写一条条 prompt 了。\n\n> 不要再自己当 loop。让 loop 替你提示 Claude。",
+    "source": "https://mp.weixin.qq.com/s/AmU1VxA2_1plRH0BCRudMw",
+    "tags": [
+      "daily-save",
+      "web-clip",
+      "AI",
+      "Claude",
+      "Loop"
+    ],
+    "category": "编程工程方法论",
+    "categorySlug": "ai-engineering"
+  },
+  {
     "slug": "2026-06-30 - 撸猫撸出SOTA缅因猫流式音视频社交模型",
     "title": "撸猫撸出SOTA！3个00后2个月，造出史上最快流式音视频社交模型",
     "date": "2026-06-30",
@@ -276,6 +293,22 @@
     ],
     "category": "宏观 / 商业",
     "categorySlug": "business"
+  },
+  {
+    "slug": "2026-06-30 - 几千万人都在用的设计Agent，为什么它值得？",
+    "title": "几千万人都在用的设计Agent，为什么它值得？",
+    "date": "2026-06-30",
+    "summary": "Lovart 是一个半年积累 1000 万用户、ARR 8000 万美元的 AI 设计 Agent。作者用 Lovart 一个下午完成了 IP 从概念立绘→三视图→精修→周边样机→提案 PPT 的完整流程，认为它是\"第一个真正意义上的 Design Agent\"——不仅能出图，还能真正做完设计。",
+    "content": "# 几千万人都在用的设计Agent，为什么它值得？\n\n> 原文链接：https://mp.weixin.qq.com/s/J4Hwc-G1TO-LYhzqNeAx7A\n\n## 摘要\n\nLovart 是一个半年积累 1000 万用户、ARR 8000 万美元的 AI 设计 Agent。作者用 Lovart 一个下午完成了 IP 从概念立绘→三视图→精修→周边样机→提案 PPT 的完整流程，认为它是\"第一个真正意义上的 Design Agent\"——不仅能出图，还能真正做完设计。\n\n## 主要内容\n\n### 背景：IP 外包的痛点\n- 一个原创 IP 外包报价几万到十几万，周期按月算\n- 概念草图→立绘→三视图→表情差分→场景演绎→周边样机→IP 提案 PPT\n- 作者用 Lovart 在同一块画布里一个下午全部完成\n\n### 第一步：定调生成概念立绘\n- 模型选 Nano Banana Pro 或 GPT Image2\n- Lovart 把 Banana Pro 用得最丝滑，材质/光影/结构稳定度高\n- 输入提示词生成「沃」——未来科技感少年 IP\n\n### 第二步：Multi-Angles 多角度出三视图\n- 选中图片一键出正/侧/背三视图，角色一致性保持完美\n- 两种模式：**主体模式**（拖动主体换视角，适合社媒配图）和**相机模式**（调虚拟摄像机位，更专业）\n- 参数化精确控制：Rotate（水平旋转）、Tilt（俯仰）、Scale（远近），共 96 种视角\n- 相当于一个 AI 摄影棚：角色已生成好，选最佳机位即可\n\n### 第三步：精准编辑——三个独家能力\n1. **Text Edit**：选中海报改字，排版/字体/发光效果纹丝不动\n2. **Touch Edit**：点哪改哪（Ctrl+点选区域→描述修改→仅该区域变化）\n3. **Edit Elements**：把画面炸开成独立图层，像排版软件一样逐层编辑\n\n### 第四步：Mockup 样机\n- 拖拽图片到样机图上，图案自动贴合产品弧度\n- 帆布袋跟着褶皱走，亚克力立牌边缘自然转折\n- 做了文化衫、帆布袋、亚克力立牌三套周边样机\n\n### 第五步：生成 IP 提案 PPT\n- 基于画布里全部设计元素生成 PPT\n- 配色、字体、视觉语言一脉相承\n- 可直接导出可编辑版本，也在画布里继续用编辑能力修改\n\n### 行业观点\n- Multi-Angles / Text Edit / Touch Edit / Edit Elements / Mockup / PPT 整套独家能力的完整度和成熟度，让 Lovart 产品体验到达了\"可以替代传统设计工具\"的临界点\n- 半年 1000 万用户，ARR 8000 万美元，新模型第一时间接入\n- 作者认为它没有取代设计师，而是把改字/贴样机/出多视角等体力活交给 Agent，解放创造力\n\n## 原文关键段落\n\n> \"Lovart 应该是目前把 NanoBanana Pro 用得最丝滑、效果最好的产品。同样一段提示词，在 Lovart 里出来的「沃」，材质、光影、五官结构的稳定度都明显更高——机能外套的液态金属反光、领口数据流的发光层次，一次就到位，几乎不用反复抽。\"\n\n> \"这三个能力（Text Edit / Touch Edit / Edit Elements）放在一起，传达的是一件事：正是这些编辑能力，让 AI 第一次不只是出图，而是真正把设计做完。从这个角度来说，我认为 Lovart 是目前真正意义上第一个 Design Agent（设计 Agent）。\"\n\n> \"有人说设计师会被取代，但我们的体感恰恰相反：它把改字、贴样机、出多视角这些体力活交给 Agent，反而解放了设计师，让人把时间花在真正有创造力的部分。\"",
+    "source": "https://mp.weixin.qq.com/s/J4Hwc-G1TO-LYhzqNeAx7A",
+    "tags": [
+      "daily-save",
+      "web-clip",
+      "AI设计",
+      "DesignAgent"
+    ],
+    "category": "设计体系",
+    "categorySlug": "ai-design"
   },
   {
     "slug": "2026-06-30 - 写Prompts的时代已经过去！Claude创始人对话互联网大厂负责人：Loop时代到来了",
