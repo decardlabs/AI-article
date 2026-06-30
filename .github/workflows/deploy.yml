@@ -14,50 +14,42 @@ jobs:
           node-version: 22
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build Next.js
-        run: npm run build
-
-      - name: Package (exclude large caches)
-        run: |
-          tar czf /tmp/deploy.tar.gz \
-            --exclude='node_modules' \
-            --exclude='.next/cache' \
-            --exclude='.next/trace' \
-            --exclude='.git' \
-            -C . .
-
-      - name: Setup SSH and deploy
+      - name: Setup SSH key
         env:
-          SSH_HOST: ${{ secrets.SSH_HOST }}
-          SSH_USER: ${{ secrets.SSH_USER }}
           SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
-          # Write and convert SSH key to PEM format (avoids libcrypto issue)
           mkdir -p ~/.ssh
           echo "$SSH_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keygen -p -m PEM -f ~/.ssh/id_rsa -N "" -q
+
+      - name: Upload source code to server
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
           ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
+          rsync -avz --delete --exclude='.next' --exclude='node_modules' --exclude='.git' ./ "$SSH_USER@$SSH_HOST:/www/wwwroot/kb.ccbot.chat/"
 
-          # Upload via rsync
-          rsync -avz --delete \
-            /tmp/deploy.tar.gz \
-            "$SSH_USER@$SSH_HOST:/tmp/deploy.tar.gz"
-
-          # Deploy on server
+      - name: Build and restart on server
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
           ssh "$SSH_USER@$SSH_HOST" bash -s << 'REMOTESHELL'
             set -euo pipefail
-            TARGET="/www/wwwroot/kb.ccbot.chat"
-            echo "Extracting..."
-            tar xzf /tmp/deploy.tar.gz -C "$TARGET" --overwrite
-            rm -f /tmp/deploy.tar.gz
-            echo "Installing production deps..."
-            cd "$TARGET"
-            npm ci --production
-            echo "Restarting PM2..."
+            cd /www/wwwroot/kb.ccbot.chat
+
+            echo "[1/4] Installing dependencies..."
+            npm ci
+
+            echo "[2/4] Generating article data..."
+            node scripts/generate-data.mjs
+
+            echo "[3/4] Building Next.js..."
+            npm run build
+
+            echo "[4/4] Restarting PM2..."
             pm2 restart ai-knowledge --update-env
-            echo "Done."
+            echo "Deploy complete."
           REMOTESHELL
