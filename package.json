@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000",
-    "build": "node scripts/generate-data.mjs && next build",
+    "build": "next build",
+    "build:local": "node scripts/generate-data.mjs && next build",
     "start": "next start -p 8000",
     "test": "node node_modules/vitest/vitest.mjs run",
     "test:watch": "node node_modules/vitest/vitest.mjs",
-    "deploy": "npm run build && rsync -avz --delete --exclude='node_modules' --exclude='.next/cache' ./ root@kb.ccbot.chat:/www/wwwroot/kb.ccbot.chat/ && ssh root@kb.ccbot.chat 'cd /www/wwwroot/kb.ccbot.chat && npm i --production && pm2 restart ai-knowledge || pm2 start ecosystem.config.js'"
+    "deploy": "npm run build:local && rsync -avz --delete --exclude='node_modules' --exclude='.next/cache' ./ root@kb.ccbot.chat:/www/wwwroot/kb.ccbot.chat/ && ssh root@kb.ccbot.chat 'cd /www/wwwroot/kb.ccbot.chat && npm i --production && pm2 restart ai-knowledge || pm2 start ecosystem.config.js'"
   },
   "dependencies": {
     "@rolldown/binding-darwin-arm64": "^1.1.3",
