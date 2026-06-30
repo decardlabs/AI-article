@@ -29,36 +29,26 @@ jobs:
             --exclude='.git' \
             -C . .
 
-      - name: Test SSH connectivity
-        id: test_ssh
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          debug: true
-          script: |
-            echo "SSH connected OK"
-            echo "HOSTNAME=$(hostname)"
+      - name: Setup SSH and deploy
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          # Write and convert SSH key to PEM format (avoids libcrypto issue)
+          mkdir -p ~/.ssh
+          echo "$SSH_KEY" > ~/.ssh/id_rsa
+          ssh-keygen -p -m PEM -f ~/.ssh/id_rsa -N "" -q
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
 
-      - name: Upload tarball
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "/tmp/deploy.tar.gz"
-          target: "/tmp"
-          strip_components: 0
-          overwrite: true
+          # Upload via rsync
+          rsync -avz --delete \
+            /tmp/deploy.tar.gz \
+            "$SSH_USER@$SSH_HOST:/tmp/deploy.tar.gz"
 
-      - name: Deploy on server
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
+          # Deploy on server
+          ssh "$SSH_USER@$SSH_HOST" bash -s << 'REMOTESHELL'
             set -euo pipefail
             TARGET="/www/wwwroot/kb.ccbot.chat"
             echo "Extracting..."
@@ -70,3 +60,4 @@ jobs:
             echo "Restarting PM2..."
             pm2 restart ai-knowledge --update-env
             echo "Done."
+          REMOTESHELL
