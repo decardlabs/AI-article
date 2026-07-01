@@ -4,8 +4,7 @@ import ArticleCard from '@/components/ArticleCard'
 export const dynamic = 'force-dynamic'
 
 export default function LatestPage() {
-  const articles = getLatestArticles(5)
-  const today = new Date().toISOString().slice(0, 10)
+  const articles = getLatestArticles(24)
 
   return (
     <div>
@@ -14,7 +13,7 @@ export default function LatestPage() {
           🆕 最新发布
         </h1>
         <p className="text-sm text-text-secondary">
-          {today} · {articles.length} 篇
+          共 {articles.length} 篇 · 最近收录
         </p>
       </div>
 
@@ -23,10 +22,6 @@ export default function LatestPage() {
           <ArticleCard key={article.slug} article={article} />
         ))}
       </div>
-
-      {articles.length === 0 && (
-        <p className="text-text-tertiary text-sm">今天暂无新文章</p>
-      )}
     </div>
   )
 }

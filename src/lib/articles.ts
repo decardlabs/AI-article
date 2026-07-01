@@ -18,9 +18,8 @@ export function getArticlesByCategory(categorySlug: string): Article[] {
 
 export function getLatestArticles(count: number): Article[] {
   const articles = getAllArticles()
-  const today = new Date().toISOString().slice(0, 10)
   return articles
-    .filter(a => a.date === today)
+    .toReversed()
     .slice(0, count)
 }
 
