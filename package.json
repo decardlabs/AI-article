@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000",
-    "build": "next build",
+    "build": "NEXT_TRACE_UPLOAD_DISABLED=1 next build",
     "build:local": "node scripts/generate-data.mjs && next build",
     "start": "next start -p 8000",
     "test": "node node_modules/vitest/vitest.mjs run",
