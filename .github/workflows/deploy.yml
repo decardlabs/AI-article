@@ -34,7 +34,10 @@ jobs:
           ssh-keygen -p -m PEM -f ~/.ssh/id_rsa -N "" -q
           ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
 
+          # Upload tarball (warning at rsync exit code 23 is OK - it's just .user.ini)
+          set +e
           rsync -avz /tmp/deploy.tar.gz "$SSH_USER@$SSH_HOST:/tmp/"
+          set -e
 
           ssh "$SSH_USER@$SSH_HOST" bash -s << 'REMOTESHELL'
             set -euo pipefail
@@ -48,13 +51,15 @@ jobs:
             cd "$TARGET"
             npm ci
 
-            echo "[3/5] Generating article data..."
-            node scripts/generate-data.mjs
-
-            echo "[4/5] Building Next.js..."
+            echo "[3/5] Building Next.js..."
+            rm -rf .next
             npm run build
 
-            echo "[5/5] Restarting PM2..."
+            echo "[4/5] Restarting PM2..."
             pm2 restart ai-knowledge --update-env
+
+            echo "[5/5] Clearing nginx cache..."
+            rm -rf /www/server/nginx/proxy_cache_dir/* || true
+
             echo "Deploy complete."
           REMOTESHELL
