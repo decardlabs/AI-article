@@ -4,7 +4,7 @@ import ArticleCard from '@/components/ArticleCard'
 export const dynamic = 'force-dynamic'
 
 export default function LatestPage() {
-  const articles = getLatestArticles(24)
+  const articles = getLatestArticles(9)
 
   return (
     <div>
