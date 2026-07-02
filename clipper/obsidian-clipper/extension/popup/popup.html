@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="app">
+    <!-- LOADING state -->
+    <div id="state-loading" class="state">
+      <div class="header">
+        <span class="dot"></span>
+        <span class="title">obsidian 剪藏</span>
+      </div>
+      <div class="loading-body">
+        <div class="spinner"></div>
+        <p>正在生成 AI 摘要...</p>
+        <p class="model-label"></p>
+      </div>
+    </div>
+
+    <!-- READY state -->
+    <div id="state-ready" class="state hidden">
+      <div class="header">
+        <span class="dot"></span>
+        <span class="title">obsidian 剪藏</span>
+        <span class="domain" id="domain"></span>
+      </div>
+      <div class="form-body">
+        <div id="article-warning" class="hidden warning">
+          ⚠️ 该页面可能不是文章内容，摘要质量可能不佳
+        </div>
+        <label>标题</label>
+        <input id="input-title" />
+
+        <div class="summary-section">
+          <div class="summary-header">
+            <label>AI 摘要</label>
+            <span class="model-badge" id="model-badge"></span>
+          </div>
+          <textarea id="input-summary"></textarea>
+          <div class="regenerate" id="btn-regenerate">↻ 重新生成</div>
+        </div>
+
+        <label>标签</label>
+        <div class="tags-wrap" id="tags-wrap">
+          <div class="tag-chip">daily-save</div>
+          <div class="tag-chip">web-clip</div>
+          <input class="tag-input" id="input-tag" placeholder="+ 添加标签" />
+        </div>
+
+        <details class="preview-collapse">
+          <summary>内容预览（<span id="word-count">0</span> 字）</summary>
+          <pre id="preview-content"></pre>
+        </details>
+      </div>
+      <div class="footer">
+        <button id="btn-cancel">取消</button>
+        <button id="btn-save" class="primary">保存到 Obsidian</button>
+      </div>
+      <div id="error-banner" class="hidden"></div>
+    </div>
+
+    <!-- SUCCESS state -->
+    <div id="state-success" class="state hidden">
+      <div class="header">
+        <span class="dot" style="background: var(--color-text-success);"></span>
+        <span class="title">obsidian 剪藏</span>
+      </div>
+      <div class="success-body">
+        <div class="checkmark">&#10003;</div>
+        <p>已保存到 Obsidian</p>
+        <p class="filename" id="saved-filename"></p>
+      </div>
+    </div>
+  </div>
+  <script src="../lib/readability.js"></script>
+  <script src="../lib/turndown.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

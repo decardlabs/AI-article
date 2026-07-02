@@ -1,0 +1,9 @@
+{
+  "name": "obsidian-clipper",
+  "private": true,
+  "description": "Browser extension + local server for clipping web pages to Obsidian",
+  "scripts": {
+    "test:server": "node --test 'server/__tests__/**/*.test.js'",
+    "test": "npm run test:server"
+  }
+}

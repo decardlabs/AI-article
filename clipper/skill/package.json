@@ -1,0 +1,15 @@
+{
+  "name": "obsidian-clipper-skill",
+  "version": "0.2.0",
+  "private": true,
+  "description": "WorkBuddy skill: summarize any URL and save to Obsidian as structured Markdown notes, with auto-push to GitHub for CI/CD deployment",
+  "keywords": [
+    "workbuddy",
+    "skill",
+    "obsidian",
+    "web-clipper",
+    "summarize",
+    "automation"
+  ],
+  "license": "MIT"
+}
