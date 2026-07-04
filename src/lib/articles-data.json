@@ -1,5 +1,30 @@
 [
   {
+    "slug": "2026-07-04 - 乐鑫ESP-BLE-UART无线串口通信方案",
+    "title": "乐鑫推出 ESP-BLE-UART 无线串口通信方案",
+    "date": "2026-07-04",
+    "summary": "乐鑫科技推出一套开箱即用的 BLE 无线串口方案 ESP-BLE-UART，封装 BLE 协议底层细节，为嵌入式设备提供低功耗近距离无线通信链路。方案配套 H4 / H21 芯片及 PC 工具链，典型场景包括设备配置、日志采集、点对点通信和 Vibe Coding 交互。",
+    "content": "# 乐鑫推出 ESP-BLE-UART 无线串口通信方案\n\n> 原文链接：https://mp.weixin.qq.com/s/Db8yFy-nnbIVdW3pJUHi6g\n\n## 摘要\n\n乐鑫科技推出一套开箱即用的 BLE 无线串口方案 ESP-BLE-UART，封装 BLE 协议底层细节，为嵌入式设备提供低功耗近距离无线通信链路。方案配套 H4 / H21 芯片及 PC 工具链，典型场景包括设备配置、日志采集、点对点通信和 Vibe Coding 交互。\n\n## 主要内容\n\n### 为什么推出 ESP-BLE-UART\n\n很多嵌入式设备无需 Wi-Fi，但依赖稳定低功耗的近距离无线链路（设备配置、状态监控、日志获取、指令交互）。传统物理串口需拆壳接线，效率低；自行构建 BLE 协议栈成本高。乐鑫方案采用\"固件组件 + PC 工具链\"标准化模式。\n\n### 核心亮点\n\n1. **固件组件**：封装完整 BLE UART GATT 服务，开发者只需集成组件调用接口即可建立 BLE UART 通道\n2. **PC 工具链**（ESP-BLE-UART Bridge）：\n   - Bridge：Python 库，封装扫描、连接、数据收发核心功能\n   - Console：可视化无线串口调试助手\n   - Daemon：将无线串口封装为本地 HTTP 服务，支持跨进程通信集成\n3. **透明传输**：不绑定上层协议（JSON/二进制/AT 指令均可），专注于稳定数据链路\n\n### 典型应用场景\n\n- 设备间点对点通信（省去物理布线）\n- 现场参数配置（替代拆机接串口线）\n- 数据采集与日志获取（实时无线输出）\n- Vibe Coding 交互：PC 端 Coding Agent 通过 BLE UART 将状态传输至设备，设备呈现动态视觉反馈\n\n### 硬件选型\n\n- **ESP32-H21**：低成本超低功耗 SoC，Bluetooth 5 (LE) + 802.15.4，适合中低负载、电池供电设备\n- **ESP32-H4**：下一代双核超低功耗 SoC，Bluetooth 5.4 (LE) + 802.15.4，USB 2.0 OTG 丰富外设，适合复杂控制与 HMI 场景\n\n### 可用性\n\nESP-BLE-UART 已随 ESP-IDF 正式发布，固件组件与 PC 工具链均可直接使用。\n\n## 原文关键段落\n\n> ESP-BLE-UART 适配乐鑫全系支持 Bluetooth LE 的 SoC。其中，ESP32-H4 与 ESP32-H21 作为乐鑫新一代支持 Bluetooth LE 的 SoC，针对低功耗连接场景进行了优化，是构建无线串口、设备互联和现场调试应用的理想选择。\n\n> ESP-BLE-UART 专注于传输层功能：将字节数据从源端透明地传递至目的端，不对上层数据格式做任何约束。无论上层采用 JSON、自定义二进制协议、AT 指令还是其他私有格式，均由开发者自行定义。\n\n> 在 Vibe Coding 场景中，PC 端的 Coding Agent 将其运行状态与事件通过 BLE UART 实时传输至终端设备，设备据此呈现动态视觉反馈，或与开发者进行直观的桌面级交互。",
+    "source": "https://mp.weixin.qq.com/s/Db8yFy-nnbIVdW3pJUHi6g",
+    "tags": [
+      "daily-save",
+      "web-clip"
+    ],
+    "category": "编程工程方法论",
+    "categorySlug": "ai-engineering"
+  },
+  {
+    "slug": "2026-07-02 - 总结网址链接技能工作流程说明",
+    "title": "总结网址链接技能 — 工作流程说明",
+    "date": "2026-07-02",
+    "summary": "<AI 生成的 2-3 句核心摘要>",
+    "content": "# 总结网址链接技能 — 工作流程说明\n\n## 概述\n\n这是一个\"一键保存网页到知识库并自动发布\"的自动化流水线。用户只需发一个链接，AI 自动完成抓取 → 总结 → 保存 → 推送 → 部署的全流程。\n\n---\n\n## 完整流程（5 步）\n\n### ① 抓取网页内容\n\n- **触发**：用户说「总结一下：https://...」\n- **工具**：`WebFetch` 抓取目标 URL\n- **提取内容**：标题、作者、发布时间、正文、核心段落\n- **异常处理**：付费墙/登录墙/JS 渲染失败时，告知用户建议手动粘贴正文\n\n### ② 生成结构化 Markdown\n\n将网页内容整理为标准格式：\n\n```markdown\n---\nsource: <原始URL>\ndate: <YYYY-MM-DD>\ntags: [daily-save, web-clip]\n---\n\n# <网页标题>\n\n> 原文链接：<原始URL>\n\n## 摘要\n<AI 生成的 2-3 句核心摘要>\n\n## 主要内容\n<结构化要点，保留原文层次>\n\n## 原文关键段落\n<摘录 1-3 段最重要的原文>\n```\n\n**规则：**\n- 标题去掉网站后缀（如 ` - 知乎`、` - 微信公众号`）\n- 摘要由 AI 重新生成，不是简单截取开头\n- 有明确作者/发布时间的填入 frontmatter\n\n### ③ 写入 Obsidian\n\n- **目标路径**：`<vault_path>/AI知识库/YYYY-MM-DD - 网站标题.md`\n- **方式**：直接用 `Write` 工具写 `.md` 文件（不依赖 Obsidian 运行）\n- **重名处理**：同一天同名文件自动加后缀 `-2.md`\n- **优点**：Obsidian 会自动刷新识别新文件，无需额外操作\n\n### ④ 推送到 GitHub → 自动编译部署\n\n写入完成后自动执行：\n\n```bash\ncd <project_dir>\nnode scripts/generate-data.mjs   # 重新扫描 Obsidian，生成 articles-data.json\ngit add src/lib/articles-data.json\ngit commit -m \"feat: add article - <标题>\"\ngit push                          # 触发 GitHub Actions\n```\n\n**GitHub Actions 自动流程：**\n\n```\npush → npm ci → next build → rsync 到服务器 → pm2 restart → 清 nginx 缓存\n```\n\n**关于分类**：`generate-data.mjs` 通过关键词匹配自动分类（匹配标题 + 标签 + 正文前 500 字），匹配规则见下方说明。\n\n### ⑤ 反馈给用户\n\n推送完成后告知：\n- ✅ 文件保存位置\n- ✅ 一句话摘要（确认内容是否准确）\n- ✅ 已推送到 GitHub，网站约 2-3 分钟后自动更新\n\n---\n\n## 分类逻辑说明\n\n分类由 `generate-data.mjs` 中的 `classifyArticle()` 函数决定：\n\n```javascript\nfunction classifyArticle(title, tags, content) {\n  const text = `${title} ${tags} ${content}`.toLowerCase()\n  for (const [keywords, category] of KEYWORD_CATEGORY_MAP) {\n    for (const kw of keywords) {\n      if (text.includes(kw.toLowerCase())) return category\n    }\n  }\n  return 'uncategorized'\n}\n```\n\n**匹配范围**：标题 + 标签 + 正文前 500 字符 → 全部转小写\n\n**匹配规则**：按 `KEYWORD_CATEGORY_MAP` 顺序，**第一个命中即定分类**，后面不再检查。都没命中则归入\"其他未分类\"。\n\n### 各分类关键词对照\n\n| 分类 slug | 分类名 | 关键词示例 |\n|-----------|--------|-----------|\n| ai-engineering | 编程工程方法论 | superpowers, claude code, loop, tdd, spec, rule, plan, 代码审查... |\n| ai-design | 设计体系 | design.md, figma, ardot, lovart, pomelli, AI 设计, 设计规范... |\n| rag-knowledge | RAG / 知识库 | rag, 知识库, obsidian, 向量, embedding, 数字人问答... |\n| edge-ai | 端侧 AI / 嵌入式 | esp32, 端侧, 嵌入式, 思必驰, 语音模型, tinyml... |\n| models | 模型 / 技术前沿 | qwen, rwkv, 开源模型, 全模态, 流式音视频... |\n| open-source | 开源工具 | 开源工具, github, 灵感熔炉, 蔓藤, awesome-cloudflare... |\n| business | 宏观 / 商业 | 创始人, 创业, 微信, 小程序, 阿里产品经理... |\n| uncategorized | 其他未分类 | 以上都匹配不到时兜底 |\n\n---\n\n## 核心链路图\n\n```\n用户发链接\n    ↓\n① WebFetch 抓取网页内容\n    ↓\n② AI 总结生成结构化 Markdown\n    ↓\n③ 写入 Obsidian（本地永久保存）\n    ↓\n④ generate-data.mjs 更新文章数据 → git push\n    ↓\n   GitHub Actions: npm ci → next build → rsync 到服务器 → pm2 restart\n    ↓\n⑤ 网站自动更新 ✅\n```\n\n---\n\n## 注意事项\n\n- URL 必须完整（含 `https://`），缺少则自动补全\n- 网页内容过长（>50k tokens）时，截取核心部分再总结\n- 遇到付费墙/登录墙，建议用户手动粘贴正文\n- 图片不下载，保留原始链接\n- 如果当前目录有未提交的改动，先用 `git stash` 再操作，完成后 `git stash pop` 恢复\n- 如果 commit 失败（无变更），说明数据已是最新\n- 如果 GitHub Actions 构建失败，需检查 GitHub 仓库的 Actions 页面\n\n---\n\n*本文档由 AI 自动生成，对应 WorkBuddy `summarize-url` 技能的工作流程说明。*\n",
+    "source": "",
+    "tags": [],
+    "category": "RAG / 知识库",
+    "categorySlug": "rag-knowledge"
+  },
+  {
     "slug": "2026-06-30 - 阿里产品经理AI全流程提效实践",
     "title": "一位阿里产品经理的AI全流程提效实践：从需求到上线全覆盖",
     "date": "2026-06-30",
