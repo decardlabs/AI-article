@@ -84,6 +84,20 @@
     "categorySlug": "open-source"
   },
   {
+    "slug": "2026-07-09 - Tutti开源多Agent统一管理平台",
+    "title": "Tutti：开源多 Agent 统一管理平台（Agent OS）",
+    "date": "2026-07-09",
+    "summary": "Tutti 是一个开源的多 Agent 统一管理平台，定位为 Agent OS。不是又一个新 Agent，而是给已有的 Agent（Codex、Claude Code 等）和订阅搭一个统一工作台。核心能力：共享工作空间、多 Agent 协作（@ 调用）、Goal to Tasks 自动拆任务、Control Center 总控台。BYO Subscriptions 机制，不用额外付费。",
+    "content": "# Tutti：开源多 Agent 统一管理平台（Agent OS）\n\n> 原文链接：https://mp.weixin.qq.com/s/j0H4o9EFbpqILPFBuZqMdA\n作者：卡尔的AI沃茨\n发布时间：2026年7月9日\n\n## 摘要\n\nTutti 是一个开源的多 Agent 统一管理平台，定位为 Agent OS。不是又一个新 Agent，而是给已有的 Agent（Codex、Claude Code 等）和订阅搭一个统一工作台。核心能力：共享工作空间、多 Agent 协作（@ 调用）、Goal to Tasks 自动拆任务、Control Center 总控台。BYO Subscriptions 机制，不用额外付费。\n\n## 主要内容\n\n### 解决的问题\n\nAgent 窗口越开越多，对话记录越传越散。想找上下文要翻历史，看任务进度要切窗口，交付时文档在这里、图片在那里、网页跑在终端里。\n\n### 核心功能\n\n- **共享工作空间**：文件、应用、任务、运行状态都在同一个工作目录，所有 Agent 共享上下文\n- **多 Agent 协作**：用 @ 在对话中调用指定 Agent，支持 Agent 之间互相拉起\n  ```\n  @Claude-Code 做文档分析 → @Codex 生成风格示意图 → @AI Canvas 出图\n  ```\n- **Goal to Tasks**：一句话描述目标，自动拆成子任务，分配对应 Agent\n- **Control Center 总控台**：所有 Agent 对话、任务进度、待审批操作一屏管理\n- **Skill 可视化**：Skill 不再是后台黑盒，而是有界面、有文件、有状态的 App，可半路干涉\n\n### BYO Subscriptions\n\n自动扫描本机已安装的 Codex、Claude Code 等 CLI，Tutti 里所有 Agent 能力用你已有的订阅跑，不用重复付费。\n\n### 其他特色\n\n- 支持模型 API Key 接入\n- 任务可沉淀为可复用工作流\n- 计划推出 Tutti VM（云端共享工作空间，支持跨设备、跨人协作）\n\n## 原文关键段落\n\n> Tutti 不是又一个新 Agent，给我们已经在用的 Agent、订阅和 Skills，搭了一个统一管理的电脑 AI 工作台——Agent OS。\n\n> 你拥有了一个无比聪明的数字同事，结果你们的协作方式，还停留在互相丢文件、互相贴链接、互相问一句上次聊到哪了……这也太原始了。\n\n> Agent 跟我们共享同一个工作空间，用同一套 App，看同一份进度。它不用在那头闷头跑，我也不用在这头干瞪眼，我们坐在同一张桌子前干活。",
+    "source": "https://mp.weixin.qq.com/s/j0H4o9EFbpqILPFBuZqMdA",
+    "tags": [
+      "daily-save",
+      "web-clip"
+    ],
+    "category": "编程工程方法论",
+    "categorySlug": "ai-engineering"
+  },
+  {
     "slug": "2026-07-09 - TRAE Work Design从零上手评测",
     "title": "从0到1快速学会字节TRAE Work Design",
     "date": "2026-07-09",
