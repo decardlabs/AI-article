@@ -28,6 +28,20 @@
     "categorySlug": "open-source"
   },
   {
+    "slug": "2026-07-09 - TRAE Work Design从零上手评测",
+    "title": "从0到1快速学会字节TRAE Work Design",
+    "date": "2026-07-09",
+    "summary": "深度评测字节 TRAE Work Design，与 Claude Design 同需求（QQ音乐首页改版）对比实测。TRAE Work 三个模式（Work/Code/Design）全在一个平台，上下文不丢失。核心亮点：支持 Figma 文件解析自动生成 Design Library、画布元素自动拆分可像 Figma 一样编辑、一键导出到 Figma 保持组件结构、可切到 Code 模式直接生成代码。",
+    "content": "# 从0到1快速学会字节TRAE Work Design\n\n> 原文链接：https://mp.weixin.qq.com/s/Qoctp19ei08fgLmVDRPJZw\n作者：彩云Sky 彩云译设计\n发布时间：2026年7月6日\n\n## 摘要\n\n深度评测字节 TRAE Work Design，与 Claude Design 同需求（QQ音乐首页改版）对比实测。TRAE Work 三个模式（Work/Code/Design）全在一个平台，上下文不丢失。核心亮点：支持 Figma 文件解析自动生成 Design Library、画布元素自动拆分可像 Figma 一样编辑、一键导出到 Figma 保持组件结构、可切到 Code 模式直接生成代码。\n\n## 主要内容\n\n### TRAE Work 三种模式\n\n- **Work 模式**：聊需求、写文档、做分析\n- **Code 模式**：写代码\n- **Design 模式**：做设计（6 月底全量上线）\n\n核心思路：Work → Design → Code 全在一个平台，切模式不丢上下文。\n\n### 三种方式建立设计系统\n\n1. **解析 Figma 文件**：丢进 Figma 设计稿自动学习组件样式，生成 Design Library（但很慢，复杂 UI Kit 可能要 40 分钟）\n2. **导入已有 TRAE 文件**：团队共享设计规范\n3. **风格探索**：内置品牌系统，或通过四段式描述从 0 生成（场景 + 感觉 + 倾向 + 排除项）\n\n### 改稿三颗粒度\n\n| 粒度 | 方式 | 适合场景 |\n|------|------|---------|\n| 粗 | 对话整体改 | 换风格、调色调 |\n| 中 | 选区块修改 | 悬停选中元素写修改意见 |\n| 细 | 面板微调 | 直接改属性参数 |\n\n### 导出能力\n\n- 交互原型（点击跳转是真的）\n- **一键导出到 Figma**：不是贴图，是组件结构干净的可编辑文件\n- **切 Code 模式**：基于设计稿直接落地前端代码\n\n### 对比 Claude Design\n\n| 维度 | TRAE Work Design | Claude Design |\n|------|-----------------|---------------|\n| 设计系统 | Figma 解析/导入/生成 | 无 |\n| 画布编辑 | 元素自动拆分，类 Figma 操作 | 纯对话 |\n| Figma 导出 | ✅ 一键导出，保持组件结构 | ❌ 无原生支持 |\n| Code 衔接 | 切 Code 模式即可 | 需另起 |\n| 速度 | 慢（免费版） | 一般 |\n\n## 原文关键段落\n\n> 以前做一个项目，需求在文档里写，设计在 Figma 里搞，代码在 IDE 里敲，三个环节三个工具。就算每个环节都有 AI 帮忙，每切一次工具，上下文就丢一次。\n\n> 设计系统这一步很关键，它其实是把团队沉淀过的审美和规则，变成了 AI 可以调用的生产资料。\n\n> AI 可以帮你跳过从 0 到 6 的那段路，从 6 到 9 还是得你自己来。TRAE 把出稿到 Figma 这段路打通之后，我觉得它大概是把 0 到 6 变成了 0 到 7，但那最后的判断力，依然还是最关键的部分。",
+    "source": "https://mp.weixin.qq.com/s/Qoctp19ei08fgLmVDRPJZw",
+    "tags": [
+      "daily-save",
+      "web-clip"
+    ],
+    "category": "编程工程方法论",
+    "categorySlug": "ai-engineering"
+  },
+  {
     "slug": "2026-07-09 - SmartCall开源AI客服呼叫中心系统",
     "title": "SmartCall：开源 AI 客服呼叫中心系统",
     "date": "2026-07-09",
