@@ -140,6 +140,20 @@
     "categorySlug": "ai-design"
   },
   {
+    "slug": "2026-07-09 - Mem0 Agent记忆层框架源码拆解",
+    "title": "Mem0 vs WorkBuddy：Agent 记忆层的两条路线",
+    "date": "2026-07-09",
+    "summary": "深度拆解 Mem0（59.9K Star）开源 Agent 记忆框架的源码实现。从写入流程（LLM 抽取 → 向量化 → 去重 → 写向量库 + SQLite + Entity Store）、检索流程（语义 + BM25 + Entity Boost 三路融合排序），到如何接入 Agent：检索放推理前、写入放回复后。",
+    "content": "# Mem0 vs WorkBuddy：Agent 记忆层的两条路线\n\n> 原文链接：https://mp.weixin.qq.com/s/CyZv5BQyW3SSVIJ1U8Ba9A\n作者：叶小钗\n发布时间：2026年7月8日\n\n## 摘要\n\n深度拆解 Mem0（59.9K Star）开源 Agent 记忆框架的源码实现。从写入流程（LLM 抽取 → 向量化 → 去重 → 写向量库 + SQLite + Entity Store）、检索流程（语义 + BM25 + Entity Boost 三路融合排序），到如何接入 Agent：检索放推理前、写入放回复后。\n\n## 主要内容\n\n### Mem0 核心架构\n\n```\n对话 → LLM 抽取关键事实 → embedding 向量化 → 去重（LLM 层面 + md5 hash）\n    → 写入 Vector Store（默认 Qdrant）\n    → SQLite 记录 history + messages（最近 10 条）\n    → Entity Store 建立实体→记忆索引\n```\n\n### 写入流程（ADD-only）\n\n- LLM 从对话中抽取值得长期保存的事实（偏好、计划、目标），非寒暄内容跳过\n- 两层去重：LLM 参考旧记忆避免重复抽取 + md5 hash 精确去重\n- Vector Store 每条记忆含：文本、向量、作用域（user_id/agent_id/run_id）、元数据、BM25 辅助字段\n- ADD-only 策略保留事实演化轨迹，不覆盖旧记忆（支持 update/delete）\n\n### 检索流程（三路融合）\n\n| 检索方式 | 说明 |\n|---------|------|\n| Semantic Score | embedding 语义相似度 |\n| BM25 Score | 关键词精确匹配（词形还原） |\n| Entity Boost | 从查询中抽实体 → 关联记忆加权（默认 +0.5） |\n\n融合公式：`final_score = (semantic + bm25 + entity_boost) / max_possible`\n\n内部查询先扩 4 倍 top-k 建候选池，再融合打分，避免过早丢相关记忆。\n\n### 接入原则\n\n- 作用域设计：`user_id`（个人偏好）、`run_id`（单次任务）、`agent_id`（能力沉淀）\n- 检索放推理前：先 search → Top-K 记忆注入 system/context\n- 写入放回复后：先响应用户 → 异步 add，不影响响应速度\n- 非所有对话都适合写入：写作 Agent 等长内容需先筛选，或将 add 封装成工具让 Agent 按需调用\n\n## 原文关键段落\n\n> Agent 记忆层的本质就一句话：把发生过的事儿存下来，保证将来能再翻出来用。\n\n> 对开发者来说，接 Mem0 最需要花心思的不是怎么写几行代码来接入，而是想清楚：什么内容值得写入记忆、怎么隔离不同用户的记忆、什么时候需要去查询记忆。\n\n> ADD-only 的好处是保留事实演化轨迹，让时间推理、多跳检索和冲突处理更有空间。",
+    "source": "https://mp.weixin.qq.com/s/CyZv5BQyW3SSVIJ1U8Ba9A",
+    "tags": [
+      "daily-save",
+      "web-clip"
+    ],
+    "category": "RAG / 知识库",
+    "categorySlug": "rag-knowledge"
+  },
+  {
     "slug": "2026-07-09 - Loop Engineering橙皮书发布",
     "title": "Loop Engineering 橙皮书发布！免费开源",
     "date": "2026-07-09",
