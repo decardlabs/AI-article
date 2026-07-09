@@ -1,5 +1,19 @@
 [
   {
+    "slug": "2026-07-09 - Uptime Kuma 2.0自托管监控面板",
+    "title": "Uptime Kuma 2.0：89K Star 自托管监控面板，付费 UptimeRobot 平替",
+    "date": "2026-07-09",
+    "summary": "Uptime Kuma 是一个漂亮易用的自托管监控工具，89K Star，支持 HTTP(s)、TCP、Ping、DNS、Docker 等多种监控类型，最低 20 秒采集一次。内置 90+ 种通知渠道（飞书、钉钉、企微、Telegram 等），附带 Status Page 功能。2.0 版本支持 MariaDB/MySQL/PostgreSQL 外部数据库，解决了 SQLite 在大规模场景下的瓶颈。",
+    "content": "# Uptime Kuma 2.0：89K Star 自托管监控面板，付费 UptimeRobot 平替\n\n> 原文链接：https://mp.weixin.qq.com/s/qwD3I8oAkPswmo823PneTw\n作者：开源项目探索\n发布时间：2026年7月6日\n\n## 摘要\n\nUptime Kuma 是一个漂亮易用的自托管监控工具，89K Star，支持 HTTP(s)、TCP、Ping、DNS、Docker 等多种监控类型，最低 20 秒采集一次。内置 90+ 种通知渠道（飞书、钉钉、企微、Telegram 等），附带 Status Page 功能。2.0 版本支持 MariaDB/MySQL/PostgreSQL 外部数据库，解决了 SQLite 在大规模场景下的瓶颈。\n\n## 主要内容\n\n### 支持的监控类型\n\n| 类型 | 典型用途 |\n|------|---------|\n| HTTP(s) | 网站、API 状态码/响应时间/关键字校验 |\n| TCP Port | 数据库、Redis、自建服务端口可达性 |\n| Ping (ICMP) | 主机经典在线检测 |\n| DNS | DNS 解析记录校验 |\n| WebSocket | 实时通信连接验证 |\n| Push | 定时任务心跳上报 |\n| Docker Container | 宿主容器状态 |\n| Steam Game Server | 游戏服务器监控 |\n| HTTP(s) Keyword / JSON Query | 页面篡改检测、接口返回值校验 |\n\n### 90+ 通知渠道\n\n- **国内**：飞书、钉钉、企业微信、Server 酱、PushPlus、Bark\n- **海外**：Telegram、Discord、Slack、Pushover、Microsoft Teams\n- **传统**：SMTP 邮件、Webhook、自定义 API\n- 支持 Liquid 模板语法自定义告警消息\n\n### Status Page（状态页）\n\n- 按服务分组展示公开健康状态\n- 自定义域名、Logo、CSS\n- 故障自动标注 Degraded/Down，恢复自动归位\n\n### 部署方式\n\n一行命令：\n```\ndocker run -d --restart=always -p 3001:3001 \\\n  -v uptime-kuma:/app/data \\\n  --name uptime-kuma \\\n  louislam/uptime-kuma:2\n```\n\n### 2.0 关键更新\n\n- 支持外部数据库（MariaDB / MySQL / PostgreSQL）\n- 重构告警引擎\n- 改进 API Key 管理与 WebSocket Bearer Token\n- SQLite → 外挂数据库：解决大规模锁等待、K8s 集群部署、高可用备份\n\n### 实战注意事项\n\n1. Ping 监控需加 `--cap-add=NET_RAW` 权限\n2. 监控频率建议 60 秒以上，避免被目标封 IP\n3. 数据卷不要挂到 NFS\n4. Nginx 反代需支持 WebSocket（Upgrade/Connection 头）\n5. K8s 部署用 2.0 + MariaDB 替代 SQLite\n\n## 原文关键段落\n\n> Uptime Kuma 的核心定位：\"A fancy self-hosted monitoring tool\"——一个漂亮、易用、自托管的监控工具。\n\n> 2.0 稳定版已于近期正式发布。这次大版本最大的变化是：支持外部数据库（MariaDB / MySQL / PostgreSQL）。\n\n> 项目地址：https://github.com/louislam/uptime-kuma",
+    "source": "https://mp.weixin.qq.com/s/qwD3I8oAkPswmo823PneTw",
+    "tags": [
+      "daily-save",
+      "web-clip"
+    ],
+    "category": "开源工具",
+    "categorySlug": "open-source"
+  },
+  {
     "slug": "2026-07-09 - SmartCall开源AI客服呼叫中心系统",
     "title": "SmartCall：开源 AI 客服呼叫中心系统",
     "date": "2026-07-09",
