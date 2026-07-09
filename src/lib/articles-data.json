@@ -1,5 +1,19 @@
 [
   {
+    "slug": "2026-07-09 - 嵌入式C语言必须吃透的6类关键字",
+    "title": "嵌入式 C 语言必须吃透的 6 类关键字",
+    "date": "2026-07-09",
+    "summary": "嵌入式开发中 6 类关键字的深度解析，每类结合真实硬件场景讲原理和坑：volatile 解决编译器优化导致的中断变量不同步、static 是 C 语言唯一的封装手段、const 把数据从 RAM 赶回 Flash 省内存、extern 的声明规范、struct/union 对接硬件协议、enum/typedef/inline 提升可读性。",
+    "content": "# 嵌入式 C 语言必须吃透的 6 类关键字\n\n> 原文链接：https://mp.weixin.qq.com/s/c9SMHzaLsAGIYZWmDFDxAg\n作者：一枚嵌入式码农\n发布时间：2026年7月9日\n\n## 摘要\n\n嵌入式开发中 6 类关键字的深度解析，每类结合真实硬件场景讲原理和坑：volatile 解决编译器优化导致的中断变量不同步、static 是 C 语言唯一的封装手段、const 把数据从 RAM 赶回 Flash 省内存、extern 的声明规范、struct/union 对接硬件协议、enum/typedef/inline 提升可读性。\n\n## 主要内容\n\n### 1. volatile — 嵌入式的第一关键字\n\n编译器优化会缓存变量值到寄存器，导致中断修改了内存但 CPU 读的还是旧值。**三类必须加 volatile 的数据：**\n- 中断和主循环共享的变量\n- 内存映射的外设寄存器\n- RTOS 下多任务无锁共享的变量\n\n> volatile 不保证原子性，32 位变量自增在 8 位机上仍然是多指令，该关中断还是要关。\n\n### 2. static — C 语言唯一的封装手段\n\n| 位置 | 作用 |\n|------|------|\n| 函数内局部变量 | 生命周期延至整个程序，值保留在 .data/.bss |\n| 文件内全局变量 | 作用域限制在当前 .c，其他文件不可见 |\n| 函数 | 限制在本文件内可见 |\n\n模块化写法：static 变量 + static 内部函数，只暴露接口函数。**static 函数不可重入**，主循环和中断同时调用会互相踩。\n\n### 3. const — 省 RAM 的关键\n\nMCU 通常 Flash 大 RAM 小，不加 const 的全局数组进 RAM，加 const 进 .rodata 段（Flash）。字库、正弦表、CRC 表、默认参数表一定要加 const。\n\nconst 的另外两个用途：\n- 函数参数声明 const 指针，约定\"只读不改\"\n- 与 volatile 组合修饰只读寄存器：`*(volatile const uint32_t *)addr`\n\n### 4. extern — 声明不是定义\n\n正确做法：定义放 .c，声明放 .h。不要散落在各个 .c 文件里随手 extern。\n\n**典型翻车现场：**\n```c\n/* a.c 定义数组 */\nuint8_t g_buf[128];\n/* b.c 声明成指针 */\nextern uint8_t *g_buf;  /* 编译链接通过，运行跑飞 */\n```\n\n### 5. struct / union — 对接硬件协议\n\n- **位域**：描述寄存器，`mode : 2` 比掩码移位直观，但位域顺序实现定义，跨平台协议慎重\n- **union**：同一内存多解释，float ↔ bytes 收发无需移位拼接\n- 注意事项：字节序、结构体对齐（`#pragma pack` / `__attribute__((packed))`）\n\n### 6. enum / typedef / inline — 可读性三件套\n\n- **enum**：状态机和错误码，编译期类型检查，调试器直接显示状态名\n- **typedef**：定宽类型（uint8_t 等），函数指针别名\n- **inline**：替代函数式宏，保留类型检查和调试能力\n\n## 原文关键段落\n\n> 如果只允许记住一个关键字，那一定是 volatile。它告诉编译器，这个变量随时可能被你看不见的东西修改，每次使用都必须老老实实从内存里读。\n\n> C 语言没有 class，没有 private，static 就是它唯一的访问控制手段。\n\n> 一个 12KB 的字模数组因为漏了 const，白白吃掉三分之一的 RAM，项目后期内存告急，查了半天才发现根源在这。",
+    "source": "https://mp.weixin.qq.com/s/c9SMHzaLsAGIYZWmDFDxAg",
+    "tags": [
+      "daily-save",
+      "web-clip"
+    ],
+    "category": "端侧 AI / 嵌入式",
+    "categorySlug": "edge-ai"
+  },
+  {
     "slug": "2026-07-09 - 四部门印发人工智能+人社应用发展实施意见",
     "title": "四部门印发《关于加快推进\"人工智能＋人社\"应用发展的实施意见》",
     "date": "2026-07-09",
