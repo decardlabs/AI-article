@@ -42,6 +42,20 @@
     "categorySlug": "rag-knowledge"
   },
   {
+    "slug": "2026-07-09 - Open Design + design.md 告别AI味UI",
+    "title": "Open Design + design.md：让 AI 生成的 UI 告别「AI 味」",
+    "date": "2026-07-09",
+    "summary": "一套让 AI 生成 UI 保持品牌一致性的组合方案。Open Design（开源设计画布工具，3.4 万 Star）提供可视化编辑界面 + MCP 协议让 AI 直接操作设计稿；design.md（Google 开源规范）用 YAML + Markdown 定义设计令牌。两个配合形成「设计指南 + AI 执行画布」的完整工作流。",
+    "content": "# Open Design + design.md：让 AI 生成的 UI 告别「AI 味」\n\n> 原文链接：https://mp.weixin.qq.com/s/lTNIHUuMgLfYySsmPDjqqA\n作者：祥子 AI工程化实战派\n发布时间：2026年7月6日\n\n## 摘要\n\n一套让 AI 生成 UI 保持品牌一致性的组合方案。Open Design（开源设计画布工具，3.4 万 Star）提供可视化编辑界面 + MCP 协议让 AI 直接操作设计稿；design.md（Google 开源规范）用 YAML + Markdown 定义设计令牌。两个配合形成「设计指南 + AI 执行画布」的完整工作流。\n\n## 主要内容\n\n### 核心问题\n\nAI 写前端页面颜色搭配乱、间距忽大忽小、每个页面像不同设计师做的——根本原因是 AI 没有设计约束。\n\n### 两个工具\n\n**Open Design**\n- 类 Figma 可视化画布，AI 通过 MCP 协议直接在画布上操作\n- 内置 150+ 设计系统、261 个插件\n- 导出 HTML/React 代码或图片\n- 本地运行，免费开源\n- 官网：opendesigner.io / GitHub：github.com/nexu-io/open-design\n\n**design.md**\n- Google Labs 开源的规范格式，用 YAML 定义设计令牌\n- 5 个核心板块：Colors → Typography → Spacing → Components → Layout\n- GitHub：github.com/google-labs-code/design.md\n- 现成设计系统合集：getdesign.md\n\n### 搭配工作流\n\n```\n① 准备 design.md → 定义好设计系统\n② 导入 Open Design → AI 加载规范\n③ AI 在画布上做设计 → 遵守规范\n④ 人工审查调整 → 所见即所得\n⑤ 导出代码 → 设计稿变 HTML/React\n```\n\n### 上手步骤\n\n1. `git clone` + `npm run dev` 启动 Open Design\n2. 项目根目录创建 DESIGN.md（包含品牌色、字体、间距、组件规范）\n3. 配置 MCP Server 连接 AI Agent（Claude Code / Codex 等）\n4. 对话让 AI 生成设计稿，画布上实时调整\n5. 满意后导出代码\n\n### 选型对比\n\n| 维度 | 纯 AI 生成 | Open Design + design.md |\n|------|-----------|------------------------|\n| 品牌一致性 | ❌ 差 | ✅ 好 |\n| 成本 | 低 | 免费开源 |\n| 可视化编辑 | ❌ 无 | ✅ 有 |\n| 离线运行 | 取决于工具 | ✅ 本地 |\n\n## 原文关键段落\n\n> AI 生成的 UI 之所以有「AI 味」，根本原因是 AI 缺少设计约束。design.md 给它一套规则，Open Design 给它一个画布，两者配合，出来的东西就不一样了。\n\n> design.md 解决的是「规则」问题——把品牌色、字号、间距这些规则写死，AI 每次生成 UI 都必须遵守。Open Design 解决的是「执行」问题——AI 不再是直接吐代码，而是在一个可视化画布上操作。",
+    "source": "https://mp.weixin.qq.com/s/lTNIHUuMgLfYySsmPDjqqA",
+    "tags": [
+      "daily-save",
+      "web-clip"
+    ],
+    "category": "设计体系",
+    "categorySlug": "ai-design"
+  },
+  {
     "slug": "2026-07-04 - 乐鑫ESP-BLE-UART无线串口通信方案",
     "title": "乐鑫推出 ESP-BLE-UART 无线串口通信方案",
     "date": "2026-07-04",
