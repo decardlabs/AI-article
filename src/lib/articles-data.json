@@ -1,5 +1,19 @@
 [
   {
+    "slug": "2026-07-12 - Mattpocock Skills v1.1 grill-me更新与五步闭环",
+    "title": "Mattpocock Skills v1.1：/grill-me 重大更新与五步闭环",
+    "date": "2026-07-12",
+    "summary": "Mattpocock Skills（GitHub 16 万 Star）v1.1 更新详解。/grill-me 三个关键修复（一次只问一个、确认门控、防自问自答）。改名重构形成五步闭环：grilling → spec → tickets → implement → code review。对比 Trellis 和 Antigravity IDE 的选择建议。",
+    "content": "# Mattpocock Skills v1.1：/grill-me 重大更新与五步闭环\n\n> 原文链接：https://mp.weixin.qq.com/s/x4Rgx2mL_DIzPtfbLrEM8A\n作者：烨笙\n发布时间：2026年7月11日\n\n## 摘要\n\nMattpocock Skills（GitHub 16 万 Star）v1.1 更新详解。/grill-me 三个关键修复（一次只问一个、确认门控、防自问自答）。改名重构形成五步闭环：grilling → spec → tickets → implement → code review。对比 Trellis 和 Antigravity IDE 的选择建议。\n\n## 主要内容\n\n### /grill-me 三个关键修复\n\n| 修复 | 旧版问题 | v1.1 解法 |\n|------|---------|-----------|\n| 一次只问一个 | 偶尔甩一堆问题 | 加了更明确的解释：问题堆在一起用户记不住 |\n| 确认门控 | grill 完直接跳实现 | 加了一道门：等我确认再往下走 |\n| 防自问自答 | agent 自己探索+自己决策 | 区分 Facts（自己查）vs Decisions（问你） |\n\n**实测结论**：强模型（GPT-5.6、Gemini 3.5、GLM 5.2）行为几乎不变，弱模型（step 3.7 flash）效果提升明显。三个修复本质是给弱模型加护栏。\n\n### 五步闭环（v1.1 完整流程）\n\n```\n① grilling → ② spec → ③ tickets → ④ implement → ⑤ code review\n```\n\n| 步骤 | 技能 | 说明 |\n|------|------|------|\n| ① grilling | /grill-me / /grill-with-docs / /wayfinder | 把需求聊透 |\n| ② spec | /to-spec（原/to-prd） | 生成规格文档 |\n| ③ tickets | /to-tickets（原/to-plan + /to-issues合并） | 分解成任务切片，声明阻塞依赖 |\n| ④ implement | /implement | 逐个实现（新增） |\n| ⑤ code review | /code-review | implement 结束后自动调用 |\n\n### grilling 三个入口怎么选\n\n- **有代码库** → `/grill-with-docs`，读取 CONTEXT.md/ADR 自动更新 glossary\n- **项目早期无代码** → `/grill-me`，纯对话追问\n- **项目太大单次跑不完** → `/wayfinder`，拆成 GitHub issues 逐个决策\n\n### 改名一览\n\n| 旧名 | 新名 | 原因 |\n|------|------|------|\n| /to-prd | /to-spec | PRD 描述产品，实际产出是 spec，更准确 |\n| /to-plan + /to-issues | /to-tickets | 合并，issues 偏 GitHub 术语，tickets 更通用 |\n\n### 选型建议\n\n- **Trellis**：但依赖 hooks，不支持 hooks 的平台性能不稳定\n- **Antigravity IDE**：内置 /grill-me + /schedule + /goal + TDD，自带完整流程\n- **核心配置**：只留两个即可——/improve-codebase-architecture（架构扫描）+ /diagnose（结构化调试）\n\n## 原文关键段落\n\n> v1.1 把后半段从「靠自觉」变成了「有技能兜底」。\n\n> 弱模型离了不行，强模型本来就是这么干的。\n\n> antigravity 已经把这些流程内置了——追问、规划、分解、实现、审查，一条对话自动走完。",
+    "source": "https://mp.weixin.qq.com/s/x4Rgx2mL_DIzPtfbLrEM8A",
+    "tags": [
+      "daily-save",
+      "web-clip"
+    ],
+    "category": "编程工程方法论",
+    "categorySlug": "ai-engineering"
+  },
+  {
     "slug": "2026-07-09 - 用WorkBuddy做投标Skill",
     "title": "我用 WorkBuddy 做了一个投标 Skill",
     "date": "2026-07-09",
