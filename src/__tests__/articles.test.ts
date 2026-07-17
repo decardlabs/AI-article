@@ -7,21 +7,20 @@ describe('getLatestArticles', () => {
     expect(articles.length).toBeLessThanOrEqual(5)
   })
 
-  it('returns only articles from today', () => {
-    const today = new Date().toISOString().slice(0, 10)
-    const articles = getLatestArticles(10)
-    for (const article of articles) {
-      expect(article.date).toBe(today)
+  it('returns the most recent articles sorted by date descending', () => {
+    const articles = getLatestArticles(9)
+    for (let i = 1; i < articles.length; i++) {
+      expect(articles[i - 1].date >= articles[i].date).toBe(true)
     }
   })
 
-  it('returns fewer than requested if not enough match', () => {
-    const allArticles = getAllArticles()
-    const today = new Date().toISOString().slice(0, 10)
-    const todayCount = allArticles.filter(a => a.date === today).length
-    const desiredCount = todayCount + 10
-    const articles = getLatestArticles(desiredCount)
-    expect(articles.length).toBe(todayCount)
+  it('returns the newest articles (matches a manual descending sort)', () => {
+    const all = getAllArticles()
+    const expected = [...all]
+      .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0))
+      .slice(0, 9)
+    const actual = getLatestArticles(9)
+    expect(actual.map(a => a.slug)).toEqual(expected.map(a => a.slug))
   })
 
   it('returns empty array when count is 0', () => {

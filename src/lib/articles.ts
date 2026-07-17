@@ -18,8 +18,15 @@ export function getArticlesByCategory(categorySlug: string): Article[] {
 
 export function getLatestArticles(count: number): Article[] {
   const articles = getAllArticles()
-  return articles
-    .toReversed()
+  return [...articles]
+    .sort((a, b) => {
+      // 主排序：日期降序（最新在前）
+      if (a.date !== b.date) {
+        return a.date < b.date ? 1 : -1
+      }
+      // 同日期时按 slug 降序，保证稳定
+      return a.slug < b.slug ? 1 : -1
+    })
     .slice(0, count)
 }
 
