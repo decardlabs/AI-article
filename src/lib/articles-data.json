@@ -18,6 +18,24 @@
     "categorySlug": "uncategorized"
   },
   {
+    "slug": "2026-07-24 - 8.6万Star的开源RAGFlow：轻松打造企业级AI知识库",
+    "title": "8.6万 Star 的开源RAGFlow：轻松打造企业级AI知识库",
+    "date": "2026-07-24",
+    "summary": "RAGFlow 是国产开源 RAG 引擎（infiniflow/ragflow，Apache 2.0，8.6 万 Star），主打把企业杂乱文档（PDF/Word/Excel/扫描件/PPT）先解析切块再问答，且每个答案都能点回原文出处。本文从\"拿它做企业知识库行不行\"的角度，拆解其能力、部署与企业适用场景，结论：文档乱、要私有化、答案要经得起追问这三条占两条，它就是开源首选。",
+    "content": "# 8.6万 Star 的开源RAGFlow：轻松打造企业级AI知识库\n\n> 原文链接：https://mp.weixin.qq.com/s/PkH_OLiLvtmo1BB0EGUK9A\n\n## 摘要\nRAGFlow 是国产开源 RAG 引擎（infiniflow/ragflow，Apache 2.0，8.6 万 Star），主打把企业杂乱文档（PDF/Word/Excel/扫描件/PPT）先解析切块再问答，且每个答案都能点回原文出处。本文从\"拿它做企业知识库行不行\"的角度，拆解其能力、部署与企业适用场景，结论：文档乱、要私有化、答案要经得起追问这三条占两条，它就是开源首选。\n\n## 主要内容\n\n### 一、RAGFlow 是什么\n开源 RAG 引擎，一句话：**把公司那堆文档解析出来、切块存好，员工提问时大模型先翻资料再张嘴，答完把出处贴上**。\n- Star 8.6 万，Apache 2.0，商用免费\n- Docker 私有化部署，数据不出内网\n- 国内团队做，中文文档/社区现成\n\n### 二、核心能力\n- **复杂文档也能喂**：能看懂版面（标题/正文分开、表格行列表头合并单元格认得、扫描件 OCR），Word/Excel/PPT/图片/网页都能传\n- **切块自己做主**：十几种切法（合同/简历/论文/表格各有切法），切完的块全部摊开，可看来自第几页、手动改——答得烂能知道烂在哪\n- **答案可溯源**：答完附出处，点一下跳回原文第几页第几段\n- **找得准**：关键词 + 语义双路召回，再重排把最相关的喂给模型；跨多份文档可串联答\n- **接入办公软件**：直接挂钉钉/企微/飞书，后台填参数免代码\n- **存量文档不搬家**：直连 Confluence/Notion/S3/Google Drive 同步，新文件自动更新\n- **多人可管控**：按角色控可见知识库、可用模型\n- **不止问答**：内置 Agent 画布（拖拽编流程：查完知识库跑代码/开网页查实时）；支持 MCP 挂到 Claude Code 等工具\n\n### 三、快速开始\n- 配置：CPU 4 核起 / 内存 16G 起 / 硬盘 50G 起 / Docker 24.0.0+（8G 机器起不来，硬伤）\n- 调系统参数：`sudo sysctl -w vm.max_map_count=262144`（写入 `/etc/sysctl.conf` 持久化）\n- 部署：\n  ```bash\n  git clone https://github.com/infiniflow/ragflow.git\n  cd ragflow/docker\n  docker compose -f docker-compose.yml up -d\n  ```\n- 有显卡在 `.env` 加 `DEVICE=gpu`；仅 x86 安装包，ARM 需自构建\n- 看日志 `docker logs -f docker-ragflow-cpu-1`，出现 `Running on all addresses` 才算起好（未起完开浏览器报 `network abnormal` 属正常）\n- 浏览器 `http://服务器IP`（默认 80），注册管理员、配模型（DeepSeek/Kimi/GPT/Gemini/本地模型均可）\n- 不想运维可用云版 `cloud.ragflow.io`（数据出网，内网要求高的别用）\n\n### 四、使用场景\n- 制度和合同库：答错可追回到原文哪一条\n- 表格多的场景：财报/研报/招投标，表格能认结构\n- 客服和 IT Helpdesk：挂进钉钉企微飞书\n- 存量文档盘活：Confluence/Notion 同步即用\n- 查完还得干活：答完跑代码/开网页，Agent 画布编得出来\n\n### 五、作者看法\n企业知识库命门在**解析和溯源**，RAGFlow 在这两点做得好，是开源里第一选择、国产搭建知识库首选。\n缺点：\n1. 硬件要求高\n2. 功能多 → 配置项多，首次上手难\n3. 权限管理比成熟商业产品糙，管控严的团队需自验\n适合：有运维能力、文档又乱又多的团队直接上。十几人传几份 PDF 随便问问的，它过重，犯不上。\n\n## 原文关键段落\n> 文档乱、要私有化、答案要经得起追问，三条占两条，RAGFlow 就是开源里的第一选择，国产项目里我觉得用它搭建AI知识库可以做首选。\n\n> 企业知识库的命门在解析和溯源，它在这方面做的非常好，多少工具到现在还在拿抽文本凑合。\n\n## 开源地址\nhttps://github.com/infiniflow/ragflow",
+    "source": "https://mp.weixin.qq.com/s/PkH_OLiLvtmo1BB0EGUK9A",
+    "tags": [
+      "daily-save",
+      "web-clip",
+      "RAG",
+      "知识库",
+      "开源",
+      "RAGFlow"
+    ],
+    "category": "RAG / 知识库",
+    "categorySlug": "rag-knowledge"
+  },
+  {
     "slug": "2026-07-20 - BISHENG毕昇2.6：1万Star企业级AI应用开发平台",
     "title": "BISHENG 毕昇 2.6：1 万 Star 的企业级 AI 应用开发平台，真的能让业务用起来了",
     "date": "2026-07-20",
